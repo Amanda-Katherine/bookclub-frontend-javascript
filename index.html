@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On The Same Page - Find Your Next Book Club Book</title>
+    <!-- beginning of Google Books API testing -->
+    <script type="text/javascript" src="http://books.google.com/books/previewlib.js"></script>
+    <script type="text/javascript">
+        google.books.load();
+  
+        function initialize() {
+          var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+          viewer.load('ISBN:0738531367');
+        }
+  
+        google.books.setOnLoadCallback(initialize);
+    </script>
+    <!-- end of Google Books API testing -->
 </head>
 <body>
     replace me in index.html
+    <div id="viewerCanvas" style="width: 600px; height: 500px"></div>
 
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 </body>
