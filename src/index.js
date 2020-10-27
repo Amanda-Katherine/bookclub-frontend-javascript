@@ -1,6 +1,7 @@
 const BACKEND_URL = "http://localhost:3000";
 
 let appContainer = document.querySelector('main')
+appContainer.setAttribute("class", "suggestions-container")
 
 function bookSearch(){
     
@@ -31,7 +32,7 @@ function bookSearch(){
                 appContainer.append(bookContainer)
                 
                 bookContainer.id = `book-${i+1}`
-                bookContainer.setAttribute("class", "search-results")
+                bookContainer.setAttribute("class", "suggestion-card")
                 title.innerHTML += "<h2>" + data.items[i].volumeInfo.title + "</h2>"
                 
                 if (!!data.items[i].volumeInfo.authors){
