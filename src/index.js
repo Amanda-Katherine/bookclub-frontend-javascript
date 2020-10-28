@@ -3,7 +3,9 @@ const BACKEND_URL = "http://localhost:3000";
 let appContainer = document.querySelector('main')
 appContainer.setAttribute("class", "suggestions-container")
 
-function bookSearch(){
+document.getElementById('search-button').addEventListener('click', Suggestion.fetchSuggestionOptions, false)
+
+// function bookSearch(){
     
     let search = document.getElementById('search').value
     // document.getElementById('title').innerHTML = ""
