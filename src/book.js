@@ -37,7 +37,7 @@ class Book{
             body: JSON.stringify(book)
         }
         // document.getElementsById("search-button").value = "" 
-        fetch("http://localhost:3000/books", options)
+        fetch("http://localhost:3000/books", options) 
         // .then(resp = console.log(resp))
         .then(resp => resp.json())
         .then(resp => console.log(resp))
