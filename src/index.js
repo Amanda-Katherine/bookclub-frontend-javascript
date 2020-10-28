@@ -4,5 +4,5 @@ let appContainer = document.querySelector('main')
 appContainer.setAttribute("class", "suggestions-container")
 
 document.getElementById('search-button').addEventListener('click', Suggestion.fetchSuggestionOptions, false)
-document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNames, false)
+document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNames.bind(BookGroup), false)
 
