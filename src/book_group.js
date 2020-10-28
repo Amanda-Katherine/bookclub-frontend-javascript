@@ -24,6 +24,9 @@ class BookGroup {
     }
 
     static renderGroups() {
+        appContainer.setAttribute("class", "suggestions-container")
+        appContainer.innerHTML = ""
+
         for (let group of BookGroup.allGroups) {
             group.renderGroup()
         }
