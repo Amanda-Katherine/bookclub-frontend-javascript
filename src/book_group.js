@@ -9,5 +9,19 @@ class BookGroup {
         // debugger
     }
 
+    static fetchClubNames() {
+        fetch("http://localhost:3000/book_groups")
+        .then(r => r.json())
+        .then(groups => {
+            for (let group of groups) {
+                let newGroup = new BookGroup(group)
+            }
+            console.log(this)
+            // debugger
+            BookGroup.allGroups.renderGroups
+            console.log("passed")
+        })
+    }
+
 
 }
