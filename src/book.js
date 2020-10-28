@@ -14,7 +14,6 @@ class Book{
         let title = bookInfo.title
         let author
         let description
-    //    (bookInfo.authors) ? let author = bookInfo.authors[0] : let author = "No known author"
            
         if (!!bookInfo.authors) {
             author = bookInfo.authors[0]
@@ -27,9 +26,8 @@ class Book{
         } else {
             description = "No preview given"
         }
-
-        let image = bookInfo.imageLinks.thumbnail
 debugger
+        let image = bookInfo.imageLinks.thumbnail
         let book = {book: {title, author, description, image}}
         
         let options = {
