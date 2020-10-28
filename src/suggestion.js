@@ -1,3 +1,11 @@
+class Suggestion {
+    static appContainer = document.querySelector('main')
+
+    // constructor(suggestion) {
+    //     this.vote = 
+    //     this.book_id = 
+    //     this.book_group_id
+    // }
 
     createBook() {
         event.preventDefault()
@@ -85,3 +93,4 @@
             })
         }
     }
+}
