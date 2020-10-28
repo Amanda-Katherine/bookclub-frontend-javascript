@@ -29,4 +29,19 @@ class BookGroup {
         }
     }
 
+    static renderGroup() {
+        let groupContainer = document.createElement('div')
+        groupContainer.id = "group-container"
+        let groupDiv = document.createElement('div')
+        debugger
+        let pgh = document.createElement('p')
+        // pgh.id = `group-${this.id}` SET VALUE OF GROUP ID HERE
+        pgh.innerText = this.name
+
+        groupDiv.append(pgh)
+        groupContainer.append(groupDiv)
+
+        // pgh.addEventListener('click', this.signIn)
+    }
+
 }
