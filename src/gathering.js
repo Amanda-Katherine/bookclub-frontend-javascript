@@ -1,0 +1,6 @@
+class Gathering {
+
+    constructor() {
+        
+    }
+}
