@@ -33,17 +33,18 @@ class BookGroup {
     }
 
     renderGroup() {
-        console.log("yay?")
+        let appContainer = document.querySelector('main')
         let groupContainer = document.createElement('div')
         groupContainer.id = "group-container"
         let groupDiv = document.createElement('div')
-        debugger
+        // debugger
         let pgh = document.createElement('p')
-        // pgh.id = `group-${this.id}` SET VALUE OF GROUP ID HERE
+        pgh.id = `group-${this.id}` 
         pgh.innerText = this.name
 
         groupDiv.append(pgh)
         groupContainer.append(groupDiv)
+        appContainer.append(groupContainer)
 
         // pgh.addEventListener('click', this.signIn)
     }
