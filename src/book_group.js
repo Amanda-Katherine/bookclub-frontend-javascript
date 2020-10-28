@@ -23,5 +23,10 @@ class BookGroup {
         })
     }
 
+    static renderGroups() {
+        for (let group of BookGroup.allGroups) {
+            group.renderGroup()
+        }
+    }
 
 }
