@@ -12,23 +12,24 @@ class Book{
 
     static createBook(bookInfo) {    
         let title = bookInfo.title
-
+        let author
+        let description
     //    (bookInfo.authors) ? let author = bookInfo.authors[0] : let author = "No known author"
            
-        // if (!!bookInfo.authors) {
-            let author = bookInfo.authors[0]
-        // } else {
-        //     let author = "No known author"
-        // }
+        if (!!bookInfo.authors) {
+            author = bookInfo.authors[0]
+        } else {
+            author = "No known author"
+        }
 
-        // if (!!bookInfo.description) {
-            let description = bookInfo.description
-        // } else {
-        //     let description = "No preview given"
-        // }
+        if (!!bookInfo.description) {
+            description = bookInfo.description
+        } else {
+            description = "No preview given"
+        }
 
         let image = bookInfo.imageLinks.thumbnail
-
+debugger
         let book = {book: {title, author, description, image}}
         
         let options = {
