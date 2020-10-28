@@ -1,3 +1,4 @@
+class Book{
     static allBooks = []
 
     constructor(book) {
@@ -45,3 +46,4 @@
 
     
 
+}
