@@ -18,7 +18,7 @@ class BookGroup {
             }
             console.log(this)
             // debugger
-            BookGroup.allGroups.renderGroups
+            this.renderGroups()
             console.log("passed")
         })
     }
@@ -29,7 +29,8 @@ class BookGroup {
         }
     }
 
-    static renderGroup() {
+    renderGroup() {
+        console.log("yay?")
         let groupContainer = document.createElement('div')
         groupContainer.id = "group-container"
         let groupDiv = document.createElement('div')
