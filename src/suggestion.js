@@ -21,13 +21,9 @@ class Suggestion {
         // debugger
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
-        // .then(test => console.log(test))
-        // .then(suggestionOptions => {
-        //     suggestionOptions.items.forEach(suggestionOption => {
-        //         suggestionOption.renderSuggestionOptions()
-        //     })})
         .then(data => Suggestion.renderSuggestions(data))}
-            
+      
+        
     static renderSuggestions(data) {
         console.log(data)
         console.log(data.items)
