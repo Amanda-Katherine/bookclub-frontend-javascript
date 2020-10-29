@@ -75,6 +75,10 @@ class BookGroup {
         let groupId = this.id
         let groupSuggestionsBookIds = []
         let groupSuggestions = this.suggestions
+
+        for (let suggestion of groupSuggestions) {
+            groupSuggestionsBookIds.push(suggestion.book_id)
+        }
     }
 
 }
