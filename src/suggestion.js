@@ -44,19 +44,13 @@ class Suggestion {
             author.setAttribute("class", "book-details")
             description.setAttribute("class", "book-details")
             img.setAttribute("class", "book-details")
-
-
-            button.id = `button-${i+1}`
-            button.type = "click"
-            button.innerHTML = "Suggest this Book"
-            
+         
             bookContainer.append(title, author, description, img, button)
             sugContainer.append(bookContainer)
             
             bookContainer.id = `suggestion-${i+1}`
             bookContainer.setAttribute("class", "suggestion-card")
 
-            let bookInfo = data[i].volumeInfo
             title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
             
             if (!!bookInfo.authors){
@@ -71,12 +65,10 @@ class Suggestion {
                 description.innerHTML += "<p><strong>Description:</strong> No Description Available</p>"
             }
 
-            if (!!bookInfo.imageLinks.thumbnail) {
                 img.src += bookInfo.imageLinks.thumbnail
             } else {
                 img.src += "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-stock-vector-no-image-available-icon-flat-vector.jpg?ver=6"
             }
-            // debugger
 
             let arg = bookInfo
 
@@ -86,8 +78,4 @@ class Suggestion {
         }
     }
 
-    // static fetchSuggestions() {
-    //     fetch("BACKEND_URL/suggestions")
-    //     .then(resp => console.log(resp))
-    // }
 }
