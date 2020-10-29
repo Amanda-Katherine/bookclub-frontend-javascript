@@ -66,8 +66,9 @@ class BookGroup {
         grpContainer.append(groupDiv)
         appContainer.append(grpContainer)
         let groupId = this.id - 1
-        
-        pgh.addEventListener('click', function(){console.log(BookGroup.allGroups[groupId])})
+        // debugger
+        pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
+    }
 
         // pgh.addEventListener('click', this.signIn)
     }
