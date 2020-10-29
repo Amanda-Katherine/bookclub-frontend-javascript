@@ -77,7 +77,10 @@ class Suggestion {
                 description.innerHTML += "<p><strong>Description:</strong> No Description Available</p>"
             }
 
+            if (!!bookInfo.imageLinks) {
                 img.src += bookInfo.imageLinks.thumbnail
+            } else if (!!bookInfo.image) {
+                img.src += bookInfo.image                
             } else {
                 img.src += "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-stock-vector-no-image-available-icon-flat-vector.jpg?ver=6"
             }
