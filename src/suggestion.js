@@ -93,4 +93,13 @@ class Suggestion {
         }
     }
 
+    static createSuggestion(sugInfo) {
+        
+        let book_id = sugInfo
+        let book_group_id = parseInt(grpContainer.id)
+        let vote = "0"
+        
+        let suggestion = {suggestion: {book_id, book_group_id, vote}}
+
+    }
 }
