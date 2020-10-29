@@ -86,4 +86,9 @@ class Suggestion {
             })
         }
     }
+
+    // static fetchSuggestions() {
+    //     fetch("BACKEND_URL/suggestions")
+    //     .then(resp => console.log(resp))
+    // }
 }
