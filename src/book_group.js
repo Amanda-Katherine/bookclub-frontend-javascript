@@ -60,9 +60,17 @@ class BookGroup {
     }
 
     showGroup() {
-        let groupId = this.id
-        let groupSuggestionsBookIds = []
-        let groupSuggestions = this.suggestions
+        debugger
+        grpContainer.innerHTML = `<h2>${this.name}</h2>`
+        grpContainer.id = `${this.id} - group`
+        // let groupId = this.id
+        let groupSuggestedBookIds = []
+        let groupSuggestedBooks = []
+        // let groupSuggestions = this.suggestions
+
+        for (let suggestion of this.suggestions) {
+            groupSuggestedBookIds.push(suggestion.book_id)
+        }
 
         for (let suggestion of groupSuggestions) {
             groupSuggestionsBookIds.push(suggestion.book_id)
