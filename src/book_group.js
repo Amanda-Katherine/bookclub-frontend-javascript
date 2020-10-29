@@ -15,23 +15,35 @@ class BookGroup {
     }
 
     static fetchClubNames() {
+        // let grpContainer = document.getElementById('group-container')
+        // debugger
         fetch("http://localhost:3000/book_groups")
         .then(r => r.json())
+        // .then(test => {
+        //     console.log(test)
+        //     // console.log(this)
+        //     return test
+        // })
         .then(groups => {
             for (let group of groups) {
                 let newGroup = new BookGroup(group)
             }
-            console.log(this)
-            // debugger
-            this.renderGroups()
-            console.log("passed")
+            // console.log(groups)
+            // console.log(this)
+            this.renderGroups()  
         })
     }
-
+    
     static renderGroups() {
-        appContainer.setAttribute("class", "suggestions-container")
-        appContainer.innerHTML = ""
+        // let oldCont = document.getElementById("group-container")
+        // oldCont.remove()
+        // debugger
 
+
+       
+        // appContainer.append(groupContainer)
+        grpContainer.innerHTML = ""
+        
         for (let group of BookGroup.allGroups) {
             group.renderGroup()
         }
