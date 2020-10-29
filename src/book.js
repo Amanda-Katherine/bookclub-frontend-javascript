@@ -45,5 +45,7 @@ class Book{
         fetch("http://localhost:3000/books", options) 
         .then(resp => resp.json())
         .then(book => new Book(book))
+        .then(book => Suggestion.createSuggestion(book.id))
+
     }
 }
