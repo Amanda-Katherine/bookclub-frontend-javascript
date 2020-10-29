@@ -79,13 +79,12 @@ class BookGroup {
                 }
             }
         }
-        debugger
+        Suggestion.renderSuggestions(groupSuggestedBooks)
         // findGroupSuggestions()
 
         // console.log(this)
         // console.log(this.suggestions)
 
-        grpContainer.innerHTML = ""
         // debugger
         // let container = 
     }
