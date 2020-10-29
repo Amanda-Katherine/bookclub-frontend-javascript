@@ -101,5 +101,14 @@ class Suggestion {
         
         let suggestion = {suggestion: {book_id, book_group_id, vote}}
 
+        let options = {
+            method: "POST", 
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify(suggestion)
+        }
+        fetch("http://localhost:3000/suggestions", options)
+        .then(resp => resp.json())
+        .then(suggestion => new Suggestion(suggestion))
+        .then(sug => BookGroup.allGroups[sug.book_group_id].showGroup())
     }
 }
