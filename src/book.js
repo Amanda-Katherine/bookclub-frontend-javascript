@@ -7,7 +7,14 @@ class Book{
         this.image = book.image
         this.description = book.description
         this.id = book.id
-        Book.allBooks.push(this)  
+        
+        //note to self - edit to search by book title name.  Currently this includes repeat books because the book ids are different 
+        // if (!Book.allBooks.includes(this)) {
+            Book.allBooks.push(this)
+        // } else {
+        //     console.log("This book already exists")
+        // }
+         
     }
 
     static createBook(bookInfo) {    
@@ -37,6 +44,6 @@ class Book{
         // document.getElementsById("search-button").value = "" 
         fetch("http://localhost:3000/books", options) 
         .then(resp => resp.json())
-        .then(test => console.log(test))
+        .then(book => new Book(book))
     }
 }
