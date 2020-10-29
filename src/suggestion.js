@@ -21,14 +21,11 @@ class Suggestion {
       
         
     static renderSuggestions(data) {
-        console.log(data)
-        // console.log(data.items)
-        debugger
-        appContainer.innerHTML = ""
-
-        let sugContainer = document.createElement('div')
-        sugContainer.setAttribute("class", "suggestions-container")
-        appContainer.append(sugContainer)
+         if (!!data[0].volumeInfo) {
+            sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
+        } else {
+            sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
+        }
 
         let i = 0  //won't run withour defining i
         for(i=0; i<data.length; i++){
