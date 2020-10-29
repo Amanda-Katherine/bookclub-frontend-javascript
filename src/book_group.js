@@ -72,8 +72,12 @@ class BookGroup {
             groupSuggestedBookIds.push(suggestion.book_id)
         }
 
-        for (let suggestion of groupSuggestions) {
-            groupSuggestionsBookIds.push(suggestion.book_id)
+        for (let bookId of groupSuggestedBookIds) {
+            for (let book of Book.allBooks) {
+                if (bookId === book.id) {
+                    groupSuggestedBooks.push(book)
+                }
+            }
         }
         debugger
         // findGroupSuggestions()
