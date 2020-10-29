@@ -24,6 +24,10 @@ class Suggestion {
         debugger
         appContainer.innerHTML = ""
 
+        let sugContainer = document.createElement('div')
+        sugContainer.setAttribute("class", "suggestions-container")
+        appContainer.append(sugContainer)
+
         let i = 0  //won't run withour defining i
         for(i=0; i<data.length; i++){
             let bookContainer = document.createElement('section')
@@ -48,7 +52,7 @@ class Suggestion {
             button.innerHTML = "Suggest this Book"
             
             bookContainer.append(title, author, description, img, button)
-            appContainer.append(bookContainer)
+            sugContainer.append(bookContainer)
             
             bookContainer.id = `suggestion-${i+1}`
             bookContainer.setAttribute("class", "suggestion-card")
