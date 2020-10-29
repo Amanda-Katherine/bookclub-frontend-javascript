@@ -15,18 +15,17 @@ class Suggestion {
         // debugger
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
-        .then(data => Suggestion.renderSuggestions(data))}
+        .then(data => Suggestion.renderSuggestions(data.items))}
       
         
     static renderSuggestions(data) {
         console.log(data)
-        console.log(data.items)
-
-        appContainer.setAttribute("class", "suggestions-container")
+        // console.log(data.items)
+        debugger
         appContainer.innerHTML = ""
 
         let i = 0  //won't run withour defining i
-        for(i=0; i<data.items.length; i++){
+        for(i=0; i<data.length; i++){
             let bookContainer = document.createElement('section')
             let title = document.createElement('div')
             let author = document.createElement('div')
@@ -54,7 +53,7 @@ class Suggestion {
             bookContainer.id = `suggestion-${i+1}`
             bookContainer.setAttribute("class", "suggestion-card")
 
-            let bookInfo = data.items[i].volumeInfo
+            let bookInfo = data[i].volumeInfo
             title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
             
             if (!!bookInfo.authors){
