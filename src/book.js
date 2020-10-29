@@ -2,12 +2,12 @@ class Book{
     static allBooks = []
 
     constructor(book) {
-        debugger
-        // this.title = book.
-        // this.author = book.
-        // this.cover_url = book.
-        // this.preview = book.
-        // Book.allBooks.push(this)  
+        this.title = book.title
+        this.author = book.author
+        this.image = book.image
+        this.description = book.description
+        this.id = book.id
+        Book.allBooks.push(this)  
     }
 
     static createBook(bookInfo) {    
@@ -26,7 +26,6 @@ class Book{
         } else {
             description = "No preview given"
         }
-debugger
         let image = bookInfo.imageLinks.thumbnail
         let book = {book: {title, author, description, image}}
         
@@ -37,9 +36,7 @@ debugger
         }
         // document.getElementsById("search-button").value = "" 
         fetch("http://localhost:3000/books", options) 
-        // .then(resp = console.log(resp))
         .then(resp => resp.json())
-        .then(resp => console.log(resp))
-        // debugger
+        .then(test => console.log(test))
     }
 }
