@@ -50,9 +50,12 @@ class BookGroup {
     }
 
     renderGroup() {
-        let appContainer = document.querySelector('main')
-        let groupContainer = document.createElement('div')
-        groupContainer.id = "group-container"
+        
+        // grpContainer.innerHTML = ""
+
+        // let groupContainer = document.createElement('div')
+        // groupContainer.id = "group-container"
+
         let groupDiv = document.createElement('div')
         // debugger
         let pgh = document.createElement('p')
