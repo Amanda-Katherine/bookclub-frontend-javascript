@@ -71,6 +71,10 @@ class BookGroup {
     }
 
         // pgh.addEventListener('click', this.signIn)
+    showGroup() {
+        let groupId = this.id
+        let groupSuggestionsBookIds = []
+        let groupSuggestions = this.suggestions
     }
 
 }
