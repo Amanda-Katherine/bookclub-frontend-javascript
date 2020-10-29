@@ -1,19 +1,13 @@
 class Suggestion {
     static appContainer = document.querySelector('main')
+    static allSuggestions = []
 
-    // constructor(suggestion) {
-    //     this.vote = 
-    //     this.book_id = 
-    //     this.book_group_id
-    // }
-
-    createBook() {
-        event.preventDefault()
-        console.log(this)
-        let title = document.getElementById("title").value
-        let author = document.getElementById("author").value
-        let description = document.getElementById("description").value
-
+    constructor(suggestion) {
+        this.id = suggestion.id
+        this.vote = suggestion.vote
+        this.book_id = suggestion.book_id
+        this.book_group_id = suggestion.book_group_id
+        Suggestion.allSuggestions.push(this)
     }
 
     static fetchSuggestionOptions() {
