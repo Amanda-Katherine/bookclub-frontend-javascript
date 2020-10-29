@@ -70,7 +70,6 @@ class BookGroup {
         pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
     }
 
-        // pgh.addEventListener('click', this.signIn)
     showGroup() {
         let groupId = this.id
         let groupSuggestionsBookIds = []
@@ -79,6 +78,17 @@ class BookGroup {
         for (let suggestion of groupSuggestions) {
             groupSuggestionsBookIds.push(suggestion.book_id)
         }
+        debugger
+        // findGroupSuggestions()
+
+        // console.log(this)
+        // console.log(this.suggestions)
+
+        grpContainer.innerHTML = ""
+        // debugger
+        // let container = 
     }
+
+
 
 }
