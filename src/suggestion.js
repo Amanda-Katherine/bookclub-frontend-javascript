@@ -1,18 +1,20 @@
 class Suggestion {
-    static appContainer = document.querySelector('main')
     static allSuggestions = []
 
     constructor(suggestion) {
-        this.id = suggestion.id
-        this.vote = suggestion.vote
-        this.book_id = suggestion.book_id
-        this.book_group_id = suggestion.book_group_id
-        Suggestion.allSuggestions.push(this)
+        // debugger
+            this.id = suggestion.id
+            this.vote = suggestion.vote
+            this.book_id = suggestion.book_id
+            this.book_group_id = suggestion.book_group_id
+        
+        // if (!Suggestion.allSuggestions.includes(this)) {
+            Suggestion.allSuggestions.push(this)
+        // }
     }
 
     static fetchSuggestionOptions() {
         let search = document.getElementById('search').value
-        // debugger
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
         .then(data => Suggestion.renderSuggestions(data.items))}
