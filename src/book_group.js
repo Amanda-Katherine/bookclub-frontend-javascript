@@ -63,9 +63,8 @@ class BookGroup {
         pgh.innerText = this.name
 
         groupDiv.append(pgh)
-        groupContainer.append(groupDiv)
-        appContainer.append(groupContainer)
-        console.log(this)
+        grpContainer.append(groupDiv)
+        appContainer.append(grpContainer)
         let groupId = this.id - 1
         
         pgh.addEventListener('click', function(){console.log(BookGroup.allGroups[groupId])})
