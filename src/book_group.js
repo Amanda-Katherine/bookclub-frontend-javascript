@@ -16,14 +16,9 @@ class BookGroup {
 
     static fetchClubNames() {
         // let grpContainer = document.getElementById('group-container')
-        // debugger
+
         fetch("http://localhost:3000/book_groups")
         .then(r => r.json())
-        // .then(test => {
-        //     console.log(test)
-        //     // console.log(this)
-        //     return test
-        // })
         .then(groups => {
             for (let group of groups) {
                 let newGroup = new BookGroup(group)
@@ -37,9 +32,6 @@ class BookGroup {
     static renderGroups() {
         // let oldCont = document.getElementById("group-container")
         // oldCont.remove()
-        // debugger
-
-
        
         // appContainer.append(groupContainer)
         grpContainer.innerHTML = ""
@@ -53,11 +45,8 @@ class BookGroup {
         
         // grpContainer.innerHTML = ""
 
-        // let groupContainer = document.createElement('div')
-        // groupContainer.id = "group-container"
-
         let groupDiv = document.createElement('div')
-        // debugger
+
         let pgh = document.createElement('p')
         pgh.id = `group-${this.id}` 
         pgh.innerText = this.name
@@ -66,7 +55,7 @@ class BookGroup {
         grpContainer.append(groupDiv)
         appContainer.append(grpContainer)
         let groupId = this.id - 1
-        // debugger
+
         pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
     }
 
