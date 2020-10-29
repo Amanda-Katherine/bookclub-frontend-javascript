@@ -1,10 +1,12 @@
 const BACKEND_URL = "http://localhost:3000";
 
 let appContainer = document.querySelector('main')
-let sugContainer = document.createElement('div')
 let grpContainer = document.createElement('div')
-sugContainer.setAttribute("class", "suggestions-container")
+let sugContainer = document.createElement('div')
 grpContainer.setAttribute("class", "group-container")
+sugContainer.setAttribute("class", "suggestions-container")
+appContainer.append(grpContainer)
+appContainer.append(sugContainer)
 
 
 
