@@ -146,21 +146,23 @@ class Suggestion {
         bookContainer.id = `${sugCount+1}-sug`
         bookContainer.setAttribute("class", "sug-card")
         
-        let options = {
-            method: "POST", 
-            headers: {"Content-Type": "application/json", "Accept": "application/json"},
-            body: JSON.stringify(suggestion)
         }
-        fetch("http://localhost:3000/suggestions", options)
-        .then(resp => resp.json())
-        .then(suggestion => new Suggestion(suggestion))
-        .then(sug => {
-            let bookGroup = BookGroup.allGroups.find(bg => bg.id === sug.book_group_id)
-            bookGroup.suggestions.push(sug)
-            let suggestedBook = Book.allBooks.find(book => book.id === sug.book_id)
-            // debugger
-            this.renderSuggestion(suggestedBook)
-        }) 
+
+        if (!!bookInfo.description) {
+            description.innerHTML += "<p>" + bookInfo.description
+        } else {
+            description.innerHTML += "<p><strong>Description:</strong> No Description Available</p>"
+        }
+
+        if (!!bookInfo.imageLinks) {
+            img.src += bookInfo.imageLinks.thumbnail
+        } else if (!!bookInfo.image) {
+            img.src += bookInfo.image                
+        } else {
+            img.src += "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-stock-vector-no-image-available-icon-flat-vector.jpg?ver=6"
+        }
+    }
+
     static setPageHeader(data) {
         if (!!data.volumeInfo) {
             sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
