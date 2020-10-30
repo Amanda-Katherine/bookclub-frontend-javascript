@@ -8,7 +8,7 @@ class BookGroup {
         this.id = group.id
         BookGroup.allGroups.push(this)
 
-        this.books = group.books.map(book => new Book(book))
+        this.books = group.books
         this.suggestions = group.suggestions.map(suggestion => new Suggestion(suggestion))
         this.gatherings = group.gatherings.map(gathering => new Gathering(gathering))
         this.members = group.members.map(member => new Member(member))
