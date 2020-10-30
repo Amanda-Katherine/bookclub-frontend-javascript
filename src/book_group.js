@@ -14,8 +14,28 @@ class BookGroup {
         this.members = group.members.map(member => new Member(member))
     }
 
-    static fetchClubNames() {
-        // let grpContainer = document.getElementById('group-container')
+    // static fetchClubNames() {
+    //     fetch("http://localhost:3000/book_groups")
+    //     .then(r => r.json())
+    //     .then(groups => {
+    //         for (let group of groups) {
+    //             let newGroup = new BookGroup(group)
+    //         }
+    //         this.renderGroups()  
+    //     })
+    // }
+
+    // static async fetchClubNames() {
+    //     let groupsResponse = await fetch("http://localhost:3000/book_groups")
+        
+    //     let groups = await groupsResponse.json()
+        
+    //     for (let group of groups) {
+    //         let newGroup = new BookGroup(group)
+    //     }
+    //     this.renderGroups()  
+    // }
+
 
         fetch("http://localhost:3000/book_groups")
         .then(r => r.json())
