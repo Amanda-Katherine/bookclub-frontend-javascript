@@ -16,6 +16,44 @@ class Suggestion {
         // }
     }
 
+    static createSuggestion(sugInfo) {
+        let book_id = sugInfo
+        let book_group_id = parseInt(grpContainer.id)
+        let vote
+
+        let sugFinder = Suggestion.allSuggestions.find(sug => (sug.book_id === book_id && sug.book_group_id === book_group_id))
+        
+        // sugFunction:
+        if (!!sugFinder) {
+            console.log("suggestion already exists")
+            let bg = BookGroup.allGroups.find(group => group.id = book_group_id)
+            bg.showGroup()
+            //how to have page show group page again without rerendering all other books?
+            debugger
+            return
+        } else {
+            let vote = "0"
+        }
+        
+        let suggestion = {suggestion: {book_id, book_group_id, vote}}
+        
+        let options = {
+            method: "POST", 
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify(suggestion)
+        }
+        fetch("http://localhost:3000/suggestions", options)
+        .then(resp => resp.json())
+        .then(suggestion => new Suggestion(suggestion))
+        .then(sug => {
+            let bookGroup = BookGroup.allGroups.find(bg => bg.id === sug.book_group_id)
+            bookGroup.suggestions.push(sug)
+            let suggestedBook = Book.allBooks.find(book => book.id === sug.book_id)
+            // debugger
+            this.renderSuggestion(suggestedBook)
+        }) 
+    }
+
     static fetchSuggestionOptions() {
         let search = document.getElementById('search').value
         possibleSugs.innerHTML = ""
