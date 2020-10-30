@@ -196,5 +196,13 @@ class Suggestion {
         this.postFetchAddVote(this)
     }
     
+    postFetchAddVote(suggestion) {
+        console.log(this)
+        console.log(suggestion)
+        debugger
+        
+        //update this ONCE backend is update  (check if status.ok? )  then do below
+        voteText.innerText = `${this.vote+1} vote(s) for this book`
+        this.vote = this.vote+1 
     }
 } 
