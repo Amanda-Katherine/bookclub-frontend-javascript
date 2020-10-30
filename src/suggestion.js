@@ -146,6 +146,16 @@ class Suggestion {
         bookContainer.id = `${sugCount+1}-sug`
         bookContainer.setAttribute("class", "sug-card")
         
+
+        title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
+        // debugger
+        if (!!bookInfo.authors){
+            author.innerHTML += "<h4><strong>Written by: </strong>" + bookInfo.authors[0] + "</h2>"
+        } else if (!!bookInfo.author) {
+            author.innerHTML += "<h4><strong>Written by: </strong>" + bookInfo.author + "</h2>"
+
+        } else {
+            author.innerHTML += "<h4>No known author</h2>"
         }
 
         if (!!bookInfo.description) {
