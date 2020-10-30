@@ -72,19 +72,19 @@ class BookGroup {
     }
 
     renderGroup() {
-        
         // grpContainer.innerHTML = ""
-
-        let groupDiv = document.createElement('div')
-
+        
+        // let groupDiv = document.createElement('div')
+        
         let pgh = document.createElement('p')
         pgh.id = `group-${this.id}` 
         pgh.innerText = this.name
-
-        groupDiv.append(pgh)
-        grpContainer.append(groupDiv)
+        
+        grpContainer.append(pgh)
+        // grpContainer.append(groupDiv)
         appContainer.append(grpContainer)
         let groupId = this.id - 1
+        // debugger
 
         pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
     }
