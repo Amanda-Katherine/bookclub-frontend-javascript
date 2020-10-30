@@ -88,81 +88,48 @@ class Suggestion {
         
         this.setPageHeader(data)
 
+        let bookInfo
+        let suggestion
+        if (data.volumeInfo) {
+            bookInfo = data.volumeInfo
+
             
-            let bookInfo
-            if (data.volumeInfo) {
-                bookInfo = data.volumeInfo
-
-               
-                possibleSugs.append(bookContainer)
-                possibleSugs.style.display = "block"
-                grpSugs.style.display = "none"
-                
-                button.id = `button-${sugCount+1}`
-                button.type = "click"
-                button.innerHTML = "Suggest this Book"
-            } else {
-                bookInfo = data
-
-                grpSugs.append(bookContainer)
-                possibleSugs.style.display = "none"
-                grpSugs.style.display = "block"
-                
-                //add in voting code here
-            }
-
-            title.id = "title"
-            author.id = "author"
-            description.id = "description"
-            img.id = "cover-image"
-
-            possibleSugs.setAttribute("class", "possible-suggestions")
-            grpSugs.setAttribute("class", "suggested-books")
-            title.setAttribute("class", "book-details")
-            author.setAttribute("class", "book-details")
-            description.setAttribute("class", "book-details")
-            img.setAttribute("class", "book-details")
-         
-            bookContainer.append(title, author, description, img, button)
-            sugContainer.append(possibleSugs, grpSugs)
-            bookContainer.id = `${sugCount+1}-sug`
-            bookContainer.setAttribute("class", "sug-card")
+            possibleSugs.append(bookContainer)
+            possibleSugs.style.display = "block"
+            grpSugs.style.display = "none"
             
-
-            title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
-            
-            if (!!bookInfo.authors){
-                author.innerHTML += "<h4><strong>Written by: </strong>" + bookInfo.authors[0] + "</h2>"
-            } else {
-                author.innerHTML += "<h4>No known author</h2>"
-            }
-
-            if (!!bookInfo.description) {
-                description.innerHTML += "<p>" + bookInfo.description
-            } else {
-                description.innerHTML += "<p><strong>Description:</strong> No Description Available</p>"
-            }
-
-            if (!!bookInfo.imageLinks) {
-                img.src += bookInfo.imageLinks.thumbnail
-            } else if (!!bookInfo.image) {
-                img.src += bookInfo.image                
-            } else {
-                img.src += "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-stock-vector-no-image-available-icon-flat-vector.jpg?ver=6"
-            }
-
-            let arg = bookInfo
+            button.id = `button-${sugCount+1}`
+            button.type = "click"
+            button.innerHTML = "Suggest this Book"
 
             button.addEventListener('click', function(){
-                Book.createBook(arg)
+                Book.createBook(bookInfo)
             })
-        // }
-    }
+        } else {
+            bookInfo = data
 
-    static createSuggestion(sugInfo) {
-        let book_id = sugInfo
-        let book_group_id = parseInt(grpContainer.id)
-        let vote = "0"
+            possibleSugs.style.display = "none"
+            grpSugs.style.display = "block"
+            
+            grpSugs.append(bookContainer)
+            
+            
+            button.id = `${sugCount+1}-vote-button`
+            button.type = "click"
+            button.innerHTML = "Vote for this Book"
+
+        title.id = "title"
+        author.id = "author"
+        description.id = "description"
+        img.id = "cover-image"
+
+        possibleSugs.setAttribute("class", "possible-suggestions")
+        grpSugs.setAttribute("class", "suggested-books")
+        title.setAttribute("class", "book-details")
+        author.setAttribute("class", "book-details")
+        description.setAttribute("class", "book-details")
+        img.setAttribute("class", "book-details")
+        voteCount.setAttribute("class", "vote-count")
         
         let suggestion = {suggestion: {book_id, book_group_id, vote}}
         
