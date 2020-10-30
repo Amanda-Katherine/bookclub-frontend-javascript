@@ -43,7 +43,8 @@ class Book{
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
             body: JSON.stringify(book)
         }
-        // document.getElementsById("search-button").value = "" 
+        document.getElementById("search").value = "" 
+        
         fetch("http://localhost:3000/books", options) 
         .then(resp => resp.json())
         .then(book => new Book(book))
