@@ -55,16 +55,6 @@ class BookGroup {
         this.renderGroups()  
 
 
-        fetch("http://localhost:3000/book_groups")
-        .then(r => r.json())
-        .then(groups => {
-            for (let group of groups) {
-                let newGroup = new BookGroup(group)
-            }
-            // console.log(groups)
-            // console.log(this)
-            this.renderGroups()  
-        })
     }
     
     static renderGroups() {
