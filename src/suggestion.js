@@ -180,6 +180,10 @@ class Suggestion {
             sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
         }
     }
+
+    voteForSuggestion() {
+        console.log(this)
+
     
     }
 } 
