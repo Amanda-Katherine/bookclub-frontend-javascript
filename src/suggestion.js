@@ -32,10 +32,18 @@ class Suggestion {
     static renderSuggestions(data) {
         grpContainer.append(sugContainer)
     //   debugger
+        if (!!data[0].volumeInfo) {
             sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
         } else {
             sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
         }
+        
+        for (let suggestion of data) {
+            this.renderSuggestion(suggestion)
+        }
+    }
+    
+    static renderSuggestion(data) {
 
             let bookContainer = document.createElement('section')
             let title = document.createElement('div')
