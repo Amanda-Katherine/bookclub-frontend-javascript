@@ -118,6 +118,16 @@ class Suggestion {
             button.type = "click"
             button.innerHTML = "Vote for this Book"
 
+            // let suggestion = Suggestion.allSuggestions.find(sug => sug.book_id === data.id) && (sug.book_group_id === parseInt(grpContainer.id))
+            // debugger
+            
+            // button.addEventListener('click', ()=> {
+            //     console.log(data)
+            //     voteCount.innerText = `${suggestion.vote} vote(s)` 
+            //     suggestion.voteForSuggestion()
+            // })
+        }
+
         title.id = "title"
         author.id = "author"
         description.id = "description"
@@ -131,7 +141,10 @@ class Suggestion {
         img.setAttribute("class", "book-details")
         voteCount.setAttribute("class", "vote-count")
         
-        let suggestion = {suggestion: {book_id, book_group_id, vote}}
+        bookContainer.append(title, author, description, img, button, voteCount)
+        sugContainer.append(possibleSugs, grpSugs)
+        bookContainer.id = `${sugCount+1}-sug`
+        bookContainer.setAttribute("class", "sug-card")
         
         let options = {
             method: "POST", 
