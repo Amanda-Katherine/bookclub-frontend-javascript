@@ -70,12 +70,6 @@ class Suggestion {
         
     static renderSuggestions(data) {
         grpContainer.append(sugContainer)
-    //   debugger
-        if (!!data[0].volumeInfo) {
-            sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
-        } else {
-            sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
-        }
         
         for (let suggestion of data) {
             this.renderSuggestion(suggestion)
@@ -184,6 +178,13 @@ class Suggestion {
             // debugger
             this.renderSuggestion(suggestedBook)
         }) 
+    static setPageHeader(data) {
+        if (!!data.volumeInfo) {
+            sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
+        } else {
+            sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
+        }
+    }
     
     }
 } 
