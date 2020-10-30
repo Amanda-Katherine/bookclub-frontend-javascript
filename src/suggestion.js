@@ -92,17 +92,6 @@ class Suggestion {
             bookContainer.id = `${sugCount+1}-sug`
             bookContainer.setAttribute("class", "sug-card")
             
-            let bookInfo
-            if (data[i].volumeInfo) {
-                bookInfo = data[i].volumeInfo
-
-                button.id = `button-${i+1}`
-                button.type = "click"
-                button.innerHTML = "Suggest this Book"
-            } else {
-                bookInfo = data[i]
-                //add in voting code here
-            }
 
             title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
             
