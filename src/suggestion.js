@@ -83,10 +83,15 @@ class Suggestion {
         let description = document.createElement('div')
         let img = document.createElement('img')
         let button = document.createElement('button')
+        let voteContainer = document.createElement('div')
         let voteCount = document.createElement('p')
         let sugCount = document.getElementsByClassName("sug-card").length
         
         this.setPageHeader(data)
+
+        bookContainer.append(title, author, description, img, voteContainer)
+        voteContainer.append(voteCount)
+        sugContainer.append(possibleSugs, grpSugs)
 
         let bookInfo
         let suggestion
@@ -97,7 +102,8 @@ class Suggestion {
             possibleSugs.append(bookContainer)
             possibleSugs.style.display = "block"
             grpSugs.style.display = "none"
-            
+
+            bookContainer.append(button)
             button.id = `button-${sugCount+1}`
             button.type = "click"
             button.innerHTML = "Suggest this Book"
@@ -114,9 +120,10 @@ class Suggestion {
             grpSugs.append(bookContainer)
             
             
-            button.id = `${sugCount+1}-vote-button`
+            button.id = `${suggestion.id}-sug-id`
             button.type = "click"
             button.innerHTML = "Vote for this Book"
+            debugger
 
             // let suggestion = Suggestion.allSuggestions.find(sug => sug.book_id === data.id) && (sug.book_group_id === parseInt(grpContainer.id))
             // debugger
@@ -139,16 +146,15 @@ class Suggestion {
         author.setAttribute("class", "book-details")
         description.setAttribute("class", "book-details")
         img.setAttribute("class", "book-details")
+        voteContainer.setAttribute("class", "vote-container")
         voteCount.setAttribute("class", "vote-count")
         
-        bookContainer.append(title, author, description, img, button, voteCount)
-        sugContainer.append(possibleSugs, grpSugs)
+       
         bookContainer.id = `${sugCount+1}-sug`
         bookContainer.setAttribute("class", "sug-card")
         
 
         title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
-        // debugger
         if (!!bookInfo.authors){
             author.innerHTML += "<h4><strong>Written by: </strong>" + bookInfo.authors[0] + "</h2>"
         } else if (!!bookInfo.author) {
