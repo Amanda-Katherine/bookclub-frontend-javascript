@@ -120,17 +120,16 @@ class Suggestion {
             button.addEventListener('click', function(){
                 Book.createBook(arg)
             })
-        }
+        // }
     }
 
     static createSuggestion(sugInfo) {
-        
         let book_id = sugInfo
         let book_group_id = parseInt(grpContainer.id)
         let vote = "0"
         
         let suggestion = {suggestion: {book_id, book_group_id, vote}}
-
+        
         let options = {
             method: "POST", 
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
@@ -139,6 +138,13 @@ class Suggestion {
         fetch("http://localhost:3000/suggestions", options)
         .then(resp => resp.json())
         .then(suggestion => new Suggestion(suggestion))
-        .then(sug => BookGroup.allGroups[sug.book_group_id].showGroup())
+        .then(sug => {
+            let bookGroup = BookGroup.allGroups.find(bg => bg.id === sug.book_group_id)
+            bookGroup.suggestions.push(sug)
+            let suggestedBook = Book.allBooks.find(book => book.id === sug.book_id)
+            // debugger
+            this.renderSuggestion(suggestedBook)
+        }) 
+    
     }
-}
+} 
