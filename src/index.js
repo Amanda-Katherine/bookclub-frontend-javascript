@@ -17,3 +17,4 @@ document.getElementById('search-button').addEventListener('click', Suggestion.fe
 document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNamesandBooks.bind(BookGroup), {once: true})
 
 
+

@@ -120,14 +120,15 @@ class Suggestion {
             grpSugs.append(bookContainer)
             
             
+            
+            let suggestion = Suggestion.allSuggestions.find(sug => {
+                return (sug.book_id === data.id) && (sug.book_group_id === parseInt(grpContainer.id))
+            })
+            
             button.id = `${suggestion.id}-sug-id`
             button.type = "click"
             button.innerHTML = "Vote for this Book"
-            debugger
 
-            // let suggestion = Suggestion.allSuggestions.find(sug => sug.book_id === data.id) && (sug.book_group_id === parseInt(grpContainer.id))
-            // debugger
-            
             // button.addEventListener('click', ()=> {
             //     console.log(data)
             //     voteCount.innerText = `${suggestion.vote} vote(s)` 

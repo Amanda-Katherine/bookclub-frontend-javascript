@@ -54,7 +54,6 @@ class BookGroup {
         }
         this.renderGroups()  
 
-
     }
     
     static renderGroups() {
@@ -88,21 +87,23 @@ class BookGroup {
         let groupId = this.id - 1
         // debugger
 
+            //CHANGE THIS TO BE FIND BY rather than reliant on id
         pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
     }
 
     showGroup() {
+        
         search.style.display = "block"
-     
+        
         grpContainer.innerHTML = `<h2>${this.name}</h2>`
         grpContainer.id = `${this.id} - group`
-
+        
         let groupSuggestedBookIds = []
         let groupSuggestedBooks = []
         for (let suggestion of this.suggestions) {
             groupSuggestedBookIds.push(suggestion.book_id)
         }
-
+        
         for (let bookId of groupSuggestedBookIds) {
             for (let book of Book.allBooks) {
                 if (bookId === book.id) {
@@ -110,16 +111,32 @@ class BookGroup {
                 }
             }
         }
-
+        
         grpContainer.append(sugContainer)
         for (let book of groupSuggestedBooks) {
-
+            
             Suggestion.renderSuggestion(book)
         }
+        // BookGroup.allGroups[2].resetGroupSuggestions()
         // findGroupSuggestions()
         // let container = 
     }
 
+    resetGroupSuggestions() {
+        let sugIds = this.suggestions.map(sug => sug.id)
 
+        //delete instances of suggestions
+// debugger
+        //delete book_group.suggestions as well? 
+        this.deleteGroupSuggestions()
+    }
+    
+    deleteGroupSuggestions() {
+        console.log(suggestions)
+        // const updatedBookGroup = this.map(({suggestions, ...}))
+        // for delete post - create forloop to delete all at once (restfully)
+        // once deleted (and confirmed), set this.suggestions = []
+    }
 
 }
+
