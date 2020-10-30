@@ -190,8 +190,11 @@ class Suggestion {
     }
 
     voteForSuggestion() {
-        console.log(this)
-
+        let voteButton = event.target
+        let voteText = voteButton.parentElement
+        
+        this.postFetchAddVote(this)
+    }
     
     }
 } 
