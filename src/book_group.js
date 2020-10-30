@@ -58,7 +58,9 @@ class BookGroup {
     }
     
     static renderGroups() {
+        search.style.display = "none"
         document.getElementById('select-club').addEventListener('click', ()=> BookGroup.renderGroups())
+        
         grpSugs.innerHTML = ""
         // let oldCont = document.getElementById("group-container")
         // oldCont.remove()
@@ -90,16 +92,16 @@ class BookGroup {
     }
 
     showGroup() {
-        // debugger
+        search.style.display = "block"
+     
         grpContainer.innerHTML = `<h2>${this.name}</h2>`
         grpContainer.id = `${this.id} - group`
-        // let groupId = this.id
+
         let groupSuggestedBookIds = []
         let groupSuggestedBooks = []
         for (let suggestion of this.suggestions) {
             groupSuggestedBookIds.push(suggestion.book_id)
         }
-        // debugger
 
         for (let bookId of groupSuggestedBookIds) {
             for (let book of Book.allBooks) {
