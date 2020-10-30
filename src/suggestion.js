@@ -77,14 +77,17 @@ class Suggestion {
     }
     
     static renderSuggestion(data) {
+        let bookContainer = document.createElement('section')
+        let title = document.createElement('div')
+        let author = document.createElement('div')
+        let description = document.createElement('div')
+        let img = document.createElement('img')
+        let button = document.createElement('button')
+        let voteCount = document.createElement('p')
+        let sugCount = document.getElementsByClassName("sug-card").length
+        
+        this.setPageHeader(data)
 
-            let bookContainer = document.createElement('section')
-            let title = document.createElement('div')
-            let author = document.createElement('div')
-            let description = document.createElement('div')
-            let img = document.createElement('img')
-            let button = document.createElement('button')
-            let sugCount = document.getElementsByClassName("sug-card").length
             
             let bookInfo
             if (data.volumeInfo) {
