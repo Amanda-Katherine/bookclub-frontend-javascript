@@ -7,6 +7,8 @@ class Suggestion {
             this.vote = suggestion.vote
             this.book_id = suggestion.book_id
             this.book_group_id = suggestion.book_group_id
+
+            //find book group suggestions and push new suggestion. 
         
         // if (!Suggestion.allSuggestions.includes(this)) {
             Suggestion.allSuggestions.push(this)
@@ -17,18 +19,19 @@ class Suggestion {
         let search = document.getElementById('search').value
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
+        // .then(test => {
+        //     console.log(test)
+        //     return test})
         .then(data => Suggestion.renderSuggestions(data.items))}
       
         
     static renderSuggestions(data) {
-         if (!!data[0].volumeInfo) {
+    //   debugger
             sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
         } else {
             sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
         }
 
-        let i = 0  //won't run withour defining i
-        for(i=0; i<data.length; i++){
             let bookContainer = document.createElement('section')
             let title = document.createElement('div')
             let author = document.createElement('div')
