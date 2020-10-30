@@ -58,6 +58,8 @@ class BookGroup {
     }
     
     static renderGroups() {
+        document.getElementById('select-club').addEventListener('click', ()=> BookGroup.renderGroups())
+        grpSugs.innerHTML = ""
         // let oldCont = document.getElementById("group-container")
         // oldCont.remove()
        
