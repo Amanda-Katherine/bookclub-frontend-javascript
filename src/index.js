@@ -5,6 +5,8 @@ let grpContainer = document.createElement('div')
 let sugContainer = document.createElement('div')
 let possibleSugs = document.createElement('div')
 let grpSugs = document.createElement('div')
+let search = document.getElementById("search-container")
+
 grpContainer.setAttribute("class", "group-container")
 sugContainer.setAttribute("class", "suggestions-container")
 appContainer.append(grpContainer)
