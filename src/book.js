@@ -7,17 +7,19 @@ class Book{
         this.image = book.image
         this.description = book.description
         this.id = book.id
-        
+        // debugger
         //note to self - edit to search by book title name.  Currently this includes repeat books because the book ids are different 
         // if (!Book.allBooks.includes(this)) {
             Book.allBooks.push(this)
+            // debugger
         // } else {
         //     console.log("This book already exists")
         // }
          
     }
 
-    static createBook(bookInfo) {    
+    static createBook(bookInfo) {  
+        possibleSugs.innerHTML = ""
         let title = bookInfo.title
         let author
         let description
@@ -46,6 +48,7 @@ class Book{
         .then(resp => resp.json())
         .then(book => new Book(book))
         .then(book => Suggestion.createSuggestion(book.id))
-
     }
+
+
 }
