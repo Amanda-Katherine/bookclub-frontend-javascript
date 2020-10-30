@@ -36,6 +36,24 @@ class BookGroup {
     //     this.renderGroups()  
     // }
 
+    static async fetchClubNamesandBooks() {
+        let [groupsResponse, booksResponse] = await Promise.all([
+            fetch("http://localhost:3000/book_groups"),
+            fetch("http://localhost:3000/books"),
+        ])
+
+        let groups = await groupsResponse.json()
+        let books = await booksResponse.json()
+
+        for (let book of books) {
+            let newBook = new Book(book) 
+        }
+
+        for (let group of groups) {
+            let newGroup = new BookGroup(group)
+        }
+        this.renderGroups()  
+
 
         fetch("http://localhost:3000/book_groups")
         .then(r => r.json())
