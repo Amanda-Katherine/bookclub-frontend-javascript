@@ -90,17 +90,16 @@ class BookGroup {
     }
 
     showGroup() {
-        debugger
+        // debugger
         grpContainer.innerHTML = `<h2>${this.name}</h2>`
         grpContainer.id = `${this.id} - group`
         // let groupId = this.id
         let groupSuggestedBookIds = []
         let groupSuggestedBooks = []
-        // let groupSuggestions = this.suggestions
-
         for (let suggestion of this.suggestions) {
             groupSuggestedBookIds.push(suggestion.book_id)
         }
+        // debugger
 
         for (let bookId of groupSuggestedBookIds) {
             for (let book of Book.allBooks) {
@@ -109,13 +108,9 @@ class BookGroup {
                 }
             }
         }
-        Suggestion.renderSuggestions(groupSuggestedBooks)
+
+
         // findGroupSuggestions()
-
-        // console.log(this)
-        // console.log(this.suggestions)
-
-        // debugger
         // let container = 
     }
 
