@@ -51,6 +51,30 @@ class Suggestion {
             let description = document.createElement('div')
             let img = document.createElement('img')
             let button = document.createElement('button')
+            let sugCount = document.getElementsByClassName("sug-card").length
+            
+            let bookInfo
+            if (data.volumeInfo) {
+                bookInfo = data.volumeInfo
+
+               
+                possibleSugs.append(bookContainer)
+                possibleSugs.style.display = "block"
+                grpSugs.style.display = "none"
+                
+                button.id = `button-${sugCount+1}`
+                button.type = "click"
+                button.innerHTML = "Suggest this Book"
+            } else {
+                bookInfo = data
+
+                grpSugs.append(bookContainer)
+                possibleSugs.style.display = "none"
+                grpSugs.style.display = "block"
+                
+                //add in voting code here
+            }
+
             title.id = "title"
             author.id = "author"
             description.id = "description"
