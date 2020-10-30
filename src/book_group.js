@@ -109,7 +109,11 @@ class BookGroup {
             }
         }
 
+        grpContainer.append(sugContainer)
+        for (let book of groupSuggestedBooks) {
 
+            Suggestion.renderSuggestion(book)
+        }
         // findGroupSuggestions()
         // let container = 
     }
