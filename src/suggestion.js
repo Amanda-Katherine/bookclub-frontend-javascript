@@ -8,6 +8,7 @@ class Suggestion {
             this.book_id = suggestion.book_id
             this.book_group_id = suggestion.book_group_id
 
+                // console.log(bookGroup)
             //find book group suggestions and push new suggestion. 
         
         // if (!Suggestion.allSuggestions.includes(this)) {
@@ -17,6 +18,9 @@ class Suggestion {
 
     static fetchSuggestionOptions() {
         let search = document.getElementById('search').value
+        possibleSugs.innerHTML = ""
+
+
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
         // .then(test => {
@@ -26,6 +30,7 @@ class Suggestion {
       
         
     static renderSuggestions(data) {
+        grpContainer.append(sugContainer)
     //   debugger
             sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
         } else {
@@ -43,16 +48,17 @@ class Suggestion {
             description.id = "description"
             img.id = "cover-image"
 
+            possibleSugs.setAttribute("class", "possible-suggestions")
+            grpSugs.setAttribute("class", "suggested-books")
             title.setAttribute("class", "book-details")
             author.setAttribute("class", "book-details")
             description.setAttribute("class", "book-details")
             img.setAttribute("class", "book-details")
          
             bookContainer.append(title, author, description, img, button)
-            sugContainer.append(bookContainer)
-            
-            bookContainer.id = `suggestion-${i+1}`
-            bookContainer.setAttribute("class", "suggestion-card")
+            sugContainer.append(possibleSugs, grpSugs)
+            bookContainer.id = `${sugCount+1}-sug`
+            bookContainer.setAttribute("class", "sug-card")
             
             let bookInfo
             if (data[i].volumeInfo) {
