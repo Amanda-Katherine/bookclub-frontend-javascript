@@ -1,7 +1,7 @@
 /* html { font-size: 22px; } */
 body { padding: 1rem; }
 
-.suggestion-card {
+.sug-card {
     background-color: rgb(132, 225, 225, 0.5);
     background-color: rgba(132, 225, 225, 0.5);
     /* padding: 1rem;  */
