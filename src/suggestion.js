@@ -64,7 +64,8 @@ class Suggestion {
         // .then(test => {
         //     console.log(test)
         //     return test})
-        .then(data => Suggestion.renderSuggestions(data.items))}
+        .then(data => Suggestion.renderSuggestions(data.items))
+    }
       
         
     static renderSuggestions(data) {
