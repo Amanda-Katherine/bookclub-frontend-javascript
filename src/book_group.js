@@ -3,7 +3,6 @@ class BookGroup {
     static allGroups = []
 
     constructor(group) {
-        // debugger
         this.name = group.name
         this.id = group.id
         BookGroup.allGroups.push(this)
@@ -79,13 +78,13 @@ class BookGroup {
         
         let pgh = document.createElement('p')
         pgh.id = `group-${this.id}` 
+        pgh.setAttribute("class", "group-name")
         pgh.innerText = this.name
         
         grpContainer.append(pgh)
         // grpContainer.append(groupDiv)
         appContainer.append(grpContainer)
         let groupId = this.id - 1
-        // debugger
 
             //CHANGE THIS TO BE FIND BY rather than reliant on id
         pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
@@ -93,9 +92,10 @@ class BookGroup {
 
     showGroup() {
         
+        // grpContainer.append(search)
         search.style.display = "block"
         
-        grpContainer.innerHTML = `<h2>${this.name}</h2>`
+        grpContainer.innerHTML = `<h2 class="group-header-name">${this.name}</h2>`
         grpContainer.id = `${this.id} - group`
         
         let groupSuggestedBookIds = []
