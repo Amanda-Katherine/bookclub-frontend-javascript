@@ -2,7 +2,6 @@ class Suggestion {
     static allSuggestions = []
 
     constructor(suggestion) {
-        // debugger
             this.id = suggestion.id
             this.vote = suggestion.vote
             this.book_id = suggestion.book_id
@@ -29,7 +28,6 @@ class Suggestion {
             let bg = BookGroup.allGroups.find(group => group.id = book_group_id)
             bg.showGroup()
             //how to have page show group page again without rerendering all other books?
-            debugger
             return
         } else {
             let vote = "0"
@@ -49,7 +47,7 @@ class Suggestion {
             let bookGroup = BookGroup.allGroups.find(bg => bg.id === sug.book_group_id)
             bookGroup.suggestions.push(sug)
             let suggestedBook = Book.allBooks.find(book => book.id === sug.book_id)
-            // debugger
+           
             this.renderSuggestion(suggestedBook)
         }) 
     }
@@ -61,9 +59,6 @@ class Suggestion {
 
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
-        // .then(test => {
-        //     console.log(test)
-        //     return test})
         .then(data => Suggestion.renderSuggestions(data.items))
     }
       
@@ -156,7 +151,7 @@ class Suggestion {
         bookContainer.setAttribute("class", "sug-card")
         
 
-        title.innerHTML += "<h2>" + bookInfo.title + "</h2>"
+        title.innerHTML += "<p class='title'>" + bookInfo.title + "</p>"
         if (!!bookInfo.authors){
             author.innerHTML += "<h4><strong>Written by: </strong>" + bookInfo.authors[0] + "</h2>"
         } else if (!!bookInfo.author) {
@@ -183,15 +178,14 @@ class Suggestion {
 
     static setPageHeader(data) {
         if (!!data.volumeInfo) {
-            sugContainer.innerHTML = "<h2> Suggest a Book to Read </h2>"
+            sugContainer.innerHTML = "<p class='suggestion-tagline'> Suggest a Book to Read </p>"
         } else {
-            sugContainer.innerHTML = "<h2> Current Club Suggestions </h2>"
+            sugContainer.innerHTML = "<p class='suggestion-tagline'> Current Club Suggestions </p>"
         }
     }
 
     voteForSuggestion() {
-        let voteButton = event.target
-        let voteText = voteButton.parentElement
+        
         
         this.postFetchAddVote(this)
     }
