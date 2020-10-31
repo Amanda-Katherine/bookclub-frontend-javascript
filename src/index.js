@@ -11,8 +11,6 @@ grpContainer.setAttribute("class", "group-container")
 sugContainer.setAttribute("class", "suggestions-container")
 appContainer.append(grpContainer)
 
-
-
 document.getElementById('search-button').addEventListener('click', Suggestion.fetchSuggestionOptions, false)
 document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNamesandBooks.bind(BookGroup), {once: true})
 
