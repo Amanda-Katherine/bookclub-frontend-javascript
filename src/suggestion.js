@@ -210,6 +210,12 @@ class Suggestion {
                 // throw new Error(response.data)
                 throw new Error(`Hmmm, looks like there was a ${response.status} error.  This did not save to the database`)
             }
+        }).then(suggestionResp => {
+                let sug = Suggestion.allSuggestions.find(s => {
+                    return s.id === suggestionResp.id
+                })
+                sug.vote = suggestionResp.vote
+
         }).catch(error => alert(error))
     }
 } 
