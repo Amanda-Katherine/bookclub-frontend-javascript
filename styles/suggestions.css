@@ -80,5 +80,5 @@ body, html {
   }
 
   @media (min-width: 900px) {
-    .cards { grid-template-columns: repeat(3, 1fr); }
+    .sug-cards { grid-template-columns: repeat(3, 1fr); }
   }
