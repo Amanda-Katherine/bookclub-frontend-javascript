@@ -191,7 +191,6 @@ class Suggestion {
     }
     
     postFetchAddVote(suggestion) {
-        voteText.innerText = `${this.vote+1} vote(s) for this book`
         let newVoteCount = this.vote + 1
 
         fetch(`http://localhost:3000/suggestions/${this.id}`, {
@@ -216,6 +215,11 @@ class Suggestion {
                 })
                 sug.vote = suggestionResp.vote
 
+                let sugVoteButton = document.getElementById(`${sug.id}-sug-id`)
+                let voteText = sugVoteButton.parentElement
+
+                
+                voteText.innerText = `${sug.vote} vote(s) for this book`
         }).catch(error => alert(error))
     }
 } 
