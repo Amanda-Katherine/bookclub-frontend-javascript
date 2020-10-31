@@ -50,8 +50,12 @@ body, html {
 }
 
 .sug-card {
-    background-color: rgb(132, 225, 225, 0.5);
-    background-color: rgba(132, 225, 225, 0.5);
+  background-color: rgba(134, 175, 175, 0.9);
+  background-color: rgb(245, 225, 225, 0.9);
+  padding-left: 25px;
+  /* padding-top: 2px; */
+  padding-bottom: 2px;
+  padding-right: 10px;
     /* padding: 1rem;  */
     /* height: 4rem; */
 }
