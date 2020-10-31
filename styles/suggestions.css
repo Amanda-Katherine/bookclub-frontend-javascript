@@ -33,6 +33,11 @@ body, html {
   font-size: 30px;
   /* position: relative; */
 }
+
+.suggestion-tagline {
+  font-size: 28px;
+  font-weight: bold;
+}
 .sug-card {
     background-color: rgb(132, 225, 225, 0.5);
     background-color: rgba(132, 225, 225, 0.5);
