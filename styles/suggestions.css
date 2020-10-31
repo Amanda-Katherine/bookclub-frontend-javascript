@@ -38,6 +38,12 @@ body, html {
   font-size: 28px;
   font-weight: bold;
 }
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .sug-card {
     background-color: rgb(132, 225, 225, 0.5);
     background-color: rgba(132, 225, 225, 0.5);
