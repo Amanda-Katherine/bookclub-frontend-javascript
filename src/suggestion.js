@@ -191,8 +191,6 @@ class Suggestion {
     }
     
     postFetchAddVote(suggestion) {
-        
-        //update this ONCE backend is update  (check if status.ok? )  then do below
         voteText.innerText = `${this.vote+1} vote(s) for this book`
         let newVoteCount = this.vote + 1
 
@@ -204,5 +202,14 @@ class Suggestion {
                 "vote": newVoteCount
             })
         })
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                // debugger
+                // throw new Error(response.data)
+                throw new Error(`Hmmm, looks like there was a ${response.status} error.  This did not save to the database`)
+            }
+        }).catch(error => alert(error))
     }
 } 
