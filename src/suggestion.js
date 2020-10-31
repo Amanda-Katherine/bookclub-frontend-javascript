@@ -191,12 +191,18 @@ class Suggestion {
     }
     
     postFetchAddVote(suggestion) {
-        console.log(this)
-        console.log(suggestion)
-        debugger
         
         //update this ONCE backend is update  (check if status.ok? )  then do below
         voteText.innerText = `${this.vote+1} vote(s) for this book`
-        this.vote = this.vote+1 
+        let newVoteCount = this.vote + 1
+
+        fetch(`http://localhost:3000/suggestions/${this.id}`, {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify({
+                "id": this.id, 
+                "vote": newVoteCount
+            })
+        })
     }
 } 
