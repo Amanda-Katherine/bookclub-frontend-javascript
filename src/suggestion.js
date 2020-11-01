@@ -196,9 +196,7 @@ class Suggestion {
             if (response.ok) {
                 return response.json()
             } else {
-                // debugger
-                // throw new Error(response.data)
-                throw new Error(`Hmmm, looks like there was a ${response.status} error.  This did not save to the database`)
+                    throw new Error(`Hmmm, looks like there was a ${response.status} error.  This did not save to the database`)
             }
         }).then(suggestionResp => {
                 let sug = Suggestion.allSuggestions.find(s => {
