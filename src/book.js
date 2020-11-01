@@ -33,6 +33,20 @@ class Book{
             let bookFinder = Book.allBooks.find(bk => {
                 return (bk.title === title) && (bk.author === author)
             })
+
+            if (!!bookFinder) {
+                console.log("this book already exists in the database")
+
+                let bkGrpId = parseInt(grpContainer.id)
+                let bkGrp = BookGroup.allGroups.find(group => group.id === bkGrpId)
+                let bkGrpSugBookIds = bkGrp.suggestions.map(suggestion => suggestion.book_id)
+                let alreadySuggestedBooks = []
+
+                for (let bkId of bkGrpSugBookIds) {
+                    let sugBook = Book.allBooks.find(book => book.id === bkId)
+                    alreadySuggestedBooks.push(sugBook)
+                }
+
             }
 
         if (!!bookInfo.description) {
