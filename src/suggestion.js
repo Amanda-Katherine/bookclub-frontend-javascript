@@ -46,10 +46,11 @@ class Suggestion {
         }) 
     }
 
+    
     static fetchSuggestionOptions() {
-        let search = document.getElementById('search').value
         possibleSugs.innerHTML = ""
-
+        
+        let search = document.getElementById('search').value
 
         return fetch("https://www.googleapis.com/books/v1/volumes?q=" + search)
         .then(response => response.json())
@@ -58,6 +59,8 @@ class Suggestion {
       
         
     static renderSuggestions(data) {
+        search.firstElementChild.value = ""
+        
         grpContainer.append(sugContainer)
         
         for (let suggestion of data) {
@@ -110,7 +113,7 @@ class Suggestion {
             
             
             
-            let suggestion = Suggestion.allSuggestions.find(sug => {
+            suggestion = Suggestion.allSuggestions.find(sug => {
                 return (sug.book_id === data.id) && (sug.book_group_id === parseInt(grpContainer.id))
             })
             
