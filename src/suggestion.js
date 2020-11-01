@@ -125,7 +125,7 @@ class Suggestion {
             button.innerHTML = "Vote for this Book"
 
             button.addEventListener('click', ()=> {
-                suggestion.voteForSuggestion()
+                suggestion.postFetchAddVote()
             })
         }
 
@@ -179,12 +179,6 @@ class Suggestion {
         } else {
             sugContainer.innerHTML = "<p class='suggestion-tagline'> Current Club Suggestions </p>"
         }
-    }
-
-    voteForSuggestion() {
-        
-        
-        this.postFetchAddVote(this)
     }
     
     postFetchAddVote(suggestion) {
