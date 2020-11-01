@@ -55,6 +55,15 @@ class Book{
                     
                     return 
                 }
+                
+                let readBooksbyGrp = bkGrp.books
+                let sugAlreadyRead = readBooksbyGrp.find(book => book.id === bookFinder.id)
+                
+                if (!!sugAlreadyRead) {
+                    alert("Excellent choice. It looks like your group has read that one already!")
+                    grpSugs.style.display = "block"
+                    return
+                }
             }
 
         if (!!bookInfo.description) {
