@@ -30,12 +30,19 @@ class Book{
             author = "No known author"
         }
 
+            let bookFinder = Book.allBooks.find(bk => {
+                return (bk.title === title) && (bk.author === author)
+            })
+            }
+
         if (!!bookInfo.description) {
             description = bookInfo.description
         } else {
             description = "No preview given"
         }
+
         let image = bookInfo.imageLinks.thumbnail
+
         let book = {book: {title, author, description, image}}
         
         let options = {
