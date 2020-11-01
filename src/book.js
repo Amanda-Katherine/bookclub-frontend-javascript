@@ -47,6 +47,14 @@ class Book{
                     alreadySuggestedBooks.push(sugBook)
                 }
 
+                let sugAlreadyMade = alreadySuggestedBooks.find(book => book === bookFinder)
+           
+                if (!!sugAlreadyMade) {
+                    alert("Excellent choice. It looks like someone in your group already selected it!")
+                    grpSugs.style.display = "block"
+                    
+                    return 
+                }
             }
 
         if (!!bookInfo.description) {
