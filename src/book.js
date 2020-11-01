@@ -7,7 +7,6 @@ class Book{
         this.image = book.image
         this.description = book.description
         this.id = book.id
-        // debugger
         //note to self - edit to search by book title name.  Currently this includes repeat books because the book ids are different 
         // if (!Book.allBooks.includes(this)) {
             Book.allBooks.push(this)
