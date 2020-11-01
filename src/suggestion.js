@@ -7,12 +7,7 @@ class Suggestion {
             this.book_id = suggestion.book_id
             this.book_group_id = suggestion.book_group_id
 
-                // console.log(bookGroup)
-            //find book group suggestions and push new suggestion. 
-        
-        // if (!Suggestion.allSuggestions.includes(this)) {
             Suggestion.allSuggestions.push(this)
-        // }
     }
 
     static createSuggestion(sugInfo) {
@@ -22,7 +17,6 @@ class Suggestion {
 
         let sugFinder = Suggestion.allSuggestions.find(sug => (sug.book_id === book_id && sug.book_group_id === book_group_id))
         
-        // sugFunction:
         if (!!sugFinder) {
             console.log("suggestion already exists")
             let bg = BookGroup.allGroups.find(group => group.id = book_group_id)
