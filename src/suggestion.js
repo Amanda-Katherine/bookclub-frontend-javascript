@@ -20,8 +20,8 @@ class Suggestion {
         if (!!sugFinder) {
             console.log("suggestion already exists")
             let bg = BookGroup.allGroups.find(group => group.id = book_group_id)
-            bg.showGroup()
-            //how to have page show group page again without rerendering all other books?
+
+            grpSugs.style.display = "block"
             return
         } else {
             let vote = "0"
