@@ -7,10 +7,10 @@ class Book{
         this.image = book.image
         this.description = book.description
         this.id = book.id
+        
         //note to self - edit to search by book title name.  Currently this includes repeat books because the book ids are different 
         // if (!Book.allBooks.includes(this)) {
             Book.allBooks.push(this)
-            // debugger
         // } else {
         //     console.log("This book already exists")
         // }
@@ -18,11 +18,12 @@ class Book{
     }
 
     static createBook(bookInfo) {  
+        search.firstElementChild.value = ""
         possibleSugs.innerHTML = ""
         let title = bookInfo.title
         let author
         let description
-           
+        
         if (!!bookInfo.authors) {
             author = bookInfo.authors[0]
         } else {
