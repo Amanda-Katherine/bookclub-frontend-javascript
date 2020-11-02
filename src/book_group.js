@@ -60,10 +60,7 @@ class BookGroup {
         document.getElementById('select-club').addEventListener('click', ()=> BookGroup.renderGroups())
         
         grpSugs.innerHTML = ""
-        // let oldCont = document.getElementById("group-container")
-        // oldCont.remove()
-       
-        // appContainer.append(groupContainer)
+
         grpContainer.innerHTML = ""
         
         for (let group of BookGroup.allGroups) {
@@ -72,10 +69,7 @@ class BookGroup {
     }
 
     renderGroup() {
-        // grpContainer.innerHTML = ""
-        
-        // let groupDiv = document.createElement('div')
-        
+       
         let pgh = document.createElement('p')
         pgh.id = `group-${this.id}` 
         pgh.setAttribute("class", "group-name")
