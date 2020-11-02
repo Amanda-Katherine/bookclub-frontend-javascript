@@ -11,6 +11,12 @@ class Gathering {
     }
 
     static showNextGathering() {
+        let host = document.createElement('div')
+        let date = document.createElement('div')
+        let address = document.createElement('div')
+        let time = document.createElement('div')
+
+        let nextGathering = this.gatherings[this.gatherings.length-1]
         
     }
 }
