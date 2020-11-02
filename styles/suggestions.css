@@ -25,6 +25,8 @@ body, html {
 #header-container div {
   font-size: 47px;
   font-weight: bold;
+  font-family: 'Shadows Into Light', cursive;
+  /* font-family: 'Fredericka the Great', cursive; */
 }
 
 #header-container p {
