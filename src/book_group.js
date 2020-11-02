@@ -114,10 +114,10 @@ class BookGroup {
     resetGroupSuggestions() {
         let sugIds = this.suggestions.map(sug => sug.id)
 
-        //delete instances of suggestions
-// debugger
-        //delete book_group.suggestions as well? 
-        this.deleteGroupSuggestions()
+        for (let sug of sugIds) {
+            return fetch(`http://localhost:3000/suggestions/${sug}`, {
+                method: "DELETE"
+            })
     }
     
     deleteGroupSuggestions() {
