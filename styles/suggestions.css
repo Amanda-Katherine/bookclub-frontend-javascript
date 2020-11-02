@@ -9,6 +9,7 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   background-origin: content-box;
+  font-family: 'Lato', sans-serif;
 }
 
 #header-container div,
