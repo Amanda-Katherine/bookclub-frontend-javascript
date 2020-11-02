@@ -118,9 +118,22 @@ class BookGroup {
             return fetch(`http://localhost:3000/suggestions/${sug}`, {
                 method: "DELETE"
             })
+            .then(response => {
+                if (response.ok) {
+                    return
+                } else {
+                    throw new Error(`Hmmm, looks like there was a ${response.status} error.  Your bookclub's suggestions were not able to be deleted.`)
+                }
+            })
+            .then(resp => {
+                console.log(this)
+            })
+            .catch(error => alert(error))
+        }    
     }
     
     deleteGroupSuggestions() {
+        debugger
         console.log(suggestions)
         // const updatedBookGroup = this.map(({suggestions, ...}))
         // for delete post - create forloop to delete all at once (restfully)
