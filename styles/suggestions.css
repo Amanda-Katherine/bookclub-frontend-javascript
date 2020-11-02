@@ -95,4 +95,10 @@ body, html {
 
   @media (min-width: 900px) {
     .sug-cards { grid-template-columns: repeat(3, 1fr); }
+    
+    #select-club {
+      color: rgba(254, 227, 156, 0.9);
+
+      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    }
   }
