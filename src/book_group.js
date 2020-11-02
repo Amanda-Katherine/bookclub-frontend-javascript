@@ -86,8 +86,6 @@ class BookGroup {
     }
 
     showGroup() {
-        
-        // grpContainer.append(search)
         search.style.display = "block"
         
         grpContainer.innerHTML = `<h2 class="group-header-name">${this.name}</h2>`
@@ -109,12 +107,8 @@ class BookGroup {
         
         grpContainer.append(sugContainer)
         for (let book of groupSuggestedBooks) {
-            
             Suggestion.renderSuggestion(book)
         }
-        // BookGroup.allGroups[2].resetGroupSuggestions()
-        // findGroupSuggestions()
-        // let container = 
     }
 
     resetGroupSuggestions() {
