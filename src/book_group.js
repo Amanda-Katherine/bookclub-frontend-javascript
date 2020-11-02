@@ -76,12 +76,13 @@ class BookGroup {
         pgh.innerText = this.name
         
         grpContainer.append(pgh)
-        // grpContainer.append(groupDiv)
         appContainer.append(grpContainer)
         let groupId = this.id - 1
-
-            //CHANGE THIS TO BE FIND BY rather than reliant on id
-        pgh.addEventListener('click', function(){BookGroup.allGroups[groupId].showGroup()})        
+    
+        pgh.addEventListener('click', ()=>{
+            let bg = BookGroup.allGroups.find(group => group.id === (groupId+1))
+            bg.showGroup()
+        })
     }
 
     showGroup() {
