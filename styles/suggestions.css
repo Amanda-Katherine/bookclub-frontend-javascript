@@ -86,6 +86,11 @@ body, html {
 
   @media (min-width: 600px) {
     .suggestions-container { grid-template-columns: repeat(2, 1fr); }
+    
+    #select-club {
+      color: rgba(80, 0, 0, 0.9);
+      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    }
   }
 
   @media (min-width: 900px) {
