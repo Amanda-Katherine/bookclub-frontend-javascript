@@ -9,4 +9,8 @@ class Gathering {
         this.time = gathering.time
         Gathering.allGatherings.push(this)
     }
+
+    static showNextGathering() {
+        
+    }
 }
