@@ -17,5 +17,10 @@ appContainer.append(gatheringContainer)
 document.getElementById('search-button').addEventListener('click', Suggestion.fetchSuggestionOptions, false)
 document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNamesandBooks.bind(BookGroup), {once: true})
 
+search.addEventListener("keydown", function(e) {
+    let key = e.which || e.keyCode()
+
+    if (key === 13) {Suggestion.fetchSuggestionOptions()}
+})
 
 
