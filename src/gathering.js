@@ -17,6 +17,5 @@ class Gathering {
         let time = document.createElement('div')
 
         let nextGathering = this.gatherings[this.gatherings.length-1]
-        
     }
 }
