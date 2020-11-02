@@ -118,7 +118,7 @@ class Suggestion {
             })
             
             voteCount.innerText = `${suggestion.vote} vote(s) for this book` 
-            voteCount.append(button)
+            voteContainer.append(button)
 
             button.id = `${suggestion.id}-sug-id`
             button.type = "click"
