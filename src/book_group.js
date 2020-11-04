@@ -90,9 +90,11 @@ class BookGroup {
         
         grpContainer.innerHTML = `<h2 class="group-header-name">${this.name}</h2>`
         grpContainer.id = `${this.id} - group`
+        grpContainer.append(sugContainer)
         
         let groupSuggestedBookIds = []
         let groupSuggestedBooks = []
+
         for (let suggestion of this.suggestions) {
             groupSuggestedBookIds.push(suggestion.book_id)
         }
@@ -105,7 +107,6 @@ class BookGroup {
             }
         }
         
-        grpContainer.append(sugContainer)
         for (let book of groupSuggestedBooks) {
             Suggestion.renderSuggestion(book)
         }
