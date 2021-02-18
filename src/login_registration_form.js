@@ -82,4 +82,9 @@ function loadRegistrationLogin() {
     forgetStyles +
     "' href='#'>forget password ?</a></p><br/>";
 
+  // set registerForm styles
+  registerForm.style.margin = "50px 20px 20px 20px";
+  registerForm.style.display = "none";
+  registerForm.id = "registerForm";
+
 }
