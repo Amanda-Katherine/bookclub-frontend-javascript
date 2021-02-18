@@ -5,4 +5,9 @@ function loadRegistrationLogin() {
     reg = document.createElement("div"),
     loginForm = document.createElement("form"),
     registerForm = document.createElement("form");
+
+  // set body styles
+  document.body.style.color = "#fff";
+  document.body.style.textTransform = "capitalize";
+
 }
