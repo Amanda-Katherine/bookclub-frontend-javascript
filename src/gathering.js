@@ -7,6 +7,9 @@ class Gathering {
         this.date = gathering.date
         this.address = gathering.address
         this.time = gathering.time
+        this.book_group_id = gathering.book_group_id
+        this.book_id = gathering.book_id
+        
         Gathering.allGatherings.push(this)
     }
 
