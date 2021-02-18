@@ -87,4 +87,30 @@ function loadRegistrationLogin() {
   registerForm.style.display = "none";
   registerForm.id = "registerForm";
 
+  // set the elements and styles on the form
+  registerForm.innerHTML =
+    "<label>first name</label><br/>" +
+    "<input type='text' placeholder='first name' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<label>last name</label><br/>" +
+    "<input type='text' placeholder='last name' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<label>e-mail</label><br/>" +
+    "<input type='email' placeholder='your email' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<label>password</label><br/>" +
+    "<input type='password' placeholder='*************' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<label>confirm password</label><br/>" +
+    "<input type='password' placeholder='*************' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<input type='submit' value='Register' style='" +
+    btnStyles +
+    "' />";
+
 }
