@@ -51,4 +51,14 @@ function loadRegistrationLogin() {
     registerForm.style.display = "none";
   };
 
+  // create some variables for styling
+  var inputStyles =
+      "background:none;border-color:#888;border-width:0 0 1px 0;width:100%;color:#fff;padding:5px;margin:5px;",
+    btnStyles =
+      "background:red;border:none;width:100%;color:#fff;padding:5px;margin:5px;",
+    forgetStyles = "color:#fff;",
+    startYears = 10,
+    endYears = 70,
+    i;
+
 }
