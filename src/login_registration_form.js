@@ -35,4 +35,20 @@ function loadRegistrationLogin() {
   reg.id = "register";
   reg.innerHTML = "register";
 
+  // hide register form and show login form
+  reg.onclick = function () {
+    this.style.color = "#fff";
+    log.style.color = "#888";
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  };
+
+  // hide login form and show register form
+  log.onclick = function () {
+    this.style.color = "#fff";
+    reg.style.color = "#888";
+    loginForm.style.display = "block";
+    registerForm.style.display = "none";
+  };
+
 }
