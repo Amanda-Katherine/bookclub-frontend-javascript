@@ -61,4 +61,8 @@ function loadRegistrationLogin() {
     endYears = 70,
     i;
 
+  // set loginForm styles
+  loginForm.style.margin = "50px 20px 20px 20px";
+  loginForm.id = "loginForm";
+
 }
