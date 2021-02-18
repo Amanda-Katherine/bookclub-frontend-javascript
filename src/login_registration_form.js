@@ -65,4 +65,21 @@ function loadRegistrationLogin() {
   loginForm.style.margin = "50px 20px 20px 20px";
   loginForm.id = "loginForm";
 
+  // set the elements and styles on the form
+  loginForm.innerHTML =
+    "<label>username</label><br/>" +
+    "<input type='text' placeholder='email' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<label>password</label><br/>" +
+    "<input type='password' placeholder='*************' style='" +
+    inputStyles +
+    "' /><br/>" +
+    "<input type='submit' value='Login' style='" +
+    btnStyles +
+    "' />" +
+    "<p><a style='" +
+    forgetStyles +
+    "' href='#'>forget password ?</a></p><br/>";
+
 }
