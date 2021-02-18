@@ -113,4 +113,10 @@ function loadRegistrationLogin() {
     btnStyles +
     "' />";
 
+  // append the buttons and form on main-div
+  div.appendChild(log);
+  div.appendChild(reg);
+  div.appendChild(loginForm);
+  div.appendChild(registerForm);
+
 }
