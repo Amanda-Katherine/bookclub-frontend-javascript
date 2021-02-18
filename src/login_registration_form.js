@@ -122,4 +122,7 @@ function loadRegistrationLogin() {
   // append main-div on the body
   document.body.appendChild(div);
 
+  //event listeners to submit forms
+  loginForm.addEventListener("submit", submitLogin);
+  registerForm.addEventListener("submit", submitRegistration);
 }
