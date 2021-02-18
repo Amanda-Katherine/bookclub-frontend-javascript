@@ -119,4 +119,7 @@ function loadRegistrationLogin() {
   div.appendChild(loginForm);
   div.appendChild(registerForm);
 
+  // append main-div on the body
+  document.body.appendChild(div);
+
 }
