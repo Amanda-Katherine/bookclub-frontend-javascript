@@ -1,52 +1,49 @@
 class BookGroup {
+  static allGroups = [];
 
-    static allGroups = []
+  constructor(group) {
+    this.name = group.name;
+    this.id = group.id;
+    BookGroup.allGroups.push(this);
 
-    constructor(group) {
-        this.name = group.name
-        this.id = group.id
-        BookGroup.allGroups.push(this)
+    this.books = group.books;
+    this.suggestions = group.suggestions.map(
+      (suggestion) => new Suggestion(suggestion)
+    );
+    this.gatherings = group.gatherings.map(
+      (gathering) => new Gathering(gathering)
+    );
+    this.members = group.members.map((member) => new Member(member));
+  }
 
-        this.books = group.books
-        this.suggestions = group.suggestions.map(suggestion => new Suggestion(suggestion))
-        this.gatherings = group.gatherings.map(gathering => new Gathering(gathering))
-        this.members = group.members.map(member => new Member(member))
+  static async fetchClubNamesandBooks() {
+    let [groupsResponse, booksResponse] = await Promise.all([
+      fetch("http://localhost:3000/book_groups"),
+      fetch("http://localhost:3000/books"),
+    ]);
+
+    let groups = await groupsResponse.json();
+    let books = await booksResponse.json();
+
+    for (let book of books) {
+      let newBook = new Book(book);
     }
+    for (let group of groups) {
+      let newGroup = new BookGroup(group);
+    }
+    this.renderGroups();
+  }
 
-    // static fetchClubNames() {
-    //     fetch("http://localhost:3000/book_groups")
-    //     .then(r => r.json())
-    //     .then(groups => {
-    //         for (let group of groups) {
-    //             let newGroup = new BookGroup(group)
-    //         }
-    //         this.renderGroups()  
-    //     })
-    // }
+  static renderGroups() {
+    search.style.display = "none";
+    document
+      .getElementById("select-club")
+      .addEventListener("click", () => BookGroup.renderGroups());
 
-    // static async fetchClubNames() {
-    //     let groupsResponse = await fetch("http://localhost:3000/book_groups")
-        
-    //     let groups = await groupsResponse.json()
-        
-    //     for (let group of groups) {
-    //         let newGroup = new BookGroup(group)
-    //     }
-    //     this.renderGroups()  
-    // }
+    grpSugs.innerHTML = "";
 
-    static async fetchClubNamesandBooks() {
-        let [groupsResponse, booksResponse] = await Promise.all([
-            fetch("http://localhost:3000/book_groups"),
-            fetch("http://localhost:3000/books"),
-        ])
+    grpContainer.innerHTML = "";
 
-        let groups = await groupsResponse.json()
-        let books = await booksResponse.json()
-
-        for (let book of books) {
-            let newBook = new Book(book) 
-        }
 
         for (let group of groups) {
             let newGroup = new BookGroup(group)
