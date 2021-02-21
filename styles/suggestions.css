@@ -62,6 +62,10 @@ html {
   border-bottom: 3px solid #ffffff;
 }
 
+/*hide member books section until built out*/
+#nav-member-books {
+  display: none;
+}
 
 .active {
   font-weight: 700;
