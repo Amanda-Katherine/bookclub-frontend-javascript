@@ -51,19 +51,15 @@ class BookGroup {
     if (loginForm) {
       loginForm.style.display = "none";
     }
-    
-    static renderGroups() {
-        search.style.display = "none"
-        document.getElementById('select-club').addEventListener('click', ()=> BookGroup.renderGroups())
-        
-        grpSugs.innerHTML = ""
 
-        grpContainer.innerHTML = ""
-        
-        for (let group of BookGroup.allGroups) {
-            group.renderGroup()
-        }
+    // non-destructively exclude first group - this is a default group for members
+    // that do not currently belong to a group and does not need to be rendered
+    let memberedBookGroup = BookGroup.allGroups.slice(1);
+
+    for (let group of memberedBookGroup) {
+      group.renderGroup();
     }
+  }
 
     renderGroup() {
        
