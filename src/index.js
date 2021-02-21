@@ -41,3 +41,8 @@ search.addEventListener("keydown", (e) => {
     Suggestion.fetchSuggestionOptions();
   }
 });
+
+//add event listener to navbar login/logout
+let logoutEventListener = document.querySelector("#nav-logout");
+logoutEventListener.addEventListener("click", submitLogout);
+
