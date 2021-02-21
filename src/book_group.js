@@ -47,13 +47,9 @@ class BookGroup {
     grpContainer.innerHTML = "";
 
     let loginForm = document.getElementById("login-form-container");
-    loginForm.style.display = "none";
 
-        for (let group of groups) {
-            let newGroup = new BookGroup(group)
-        }
-        this.renderGroups()  
-
+    if (loginForm) {
+      loginForm.style.display = "none";
     }
     
     static renderGroups() {
