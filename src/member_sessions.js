@@ -165,6 +165,12 @@ async function submitLogin() {
   let password = document.getElementById("login-password").value;
   const memberLogin = { member: { email, password } };
 
+  if (email === "" || password === "") {
+    window.alert(
+      "Looks like there is a blank field. Please fill in email and password to log in."
+    );
+    return;
+  }
   let options = {
     method: "POST",
     credential: "same-origin",
