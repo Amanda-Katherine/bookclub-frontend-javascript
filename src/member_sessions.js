@@ -287,5 +287,27 @@ async function submitLogout() {
     localStorage.clear();
     localStorage.setItem("loggedIn", false);
 
+    //hide logout/find book club options
+    navBookClubs.style.display = "none";
+    navLogout.style.display = "none";
+
+    //show login option in nav bar with event listener for login form to appear
+    navLogin.style.display = "block";
+
+    navLogin.addEventListener("click", () => {
+      navLogin.style.display = "none";
+      let loginForm = document.getElementById("login-form-container");
+
+      if (loginForm) {
+        loginForm.style.display = "block";
+      } else {
+        loadRegistrationLogin();
+      }
+    });
+
+    //ensure book group container is hidden when logging  out
+    let appContainer = document.getElementById("app-container");
+    appContainer.style.display = "none";
+    document.getElementById("search-container").style.display = "none";
   }
 }
