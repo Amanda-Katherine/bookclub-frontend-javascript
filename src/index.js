@@ -53,3 +53,15 @@ menuToggle.addEventListener("click", () => {
   navbar.classList.toggle("open");
 });
 
+//only show login/registration page if member is not already logged in
+if (!localStorage.getItem("memberId")) {
+  localStorage.setItem("loggedIn", false);
+  navLogin.style.display = "none";
+  navLogout.style.display = "none";
+  navBookClubs.style.display = "none";
+  //function below is in member_sessions.js
+  loadRegistrationLogin();
+} else {
+  navLogout.style.display = "block";
+  navLogin.style.display = "none";
+}
