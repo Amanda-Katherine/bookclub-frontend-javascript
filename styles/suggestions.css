@@ -13,29 +13,8 @@ html {
   font-family: "Lato", sans-serif;
 }
 
-#header-container div,
-#header-containr p {
-  display: inline;
-  vertical-align: top;
-  float: left;
-  line-height: 28px;
-  /* font-size: 16px; */
-  padding-bottom: 0px;
 }
 
-#header-container div {
-  font-size: 47px;
-  font-weight: bold;
-  font-family: 'Shadows Into Light', cursive;
-  /* font-family: 'Fredericka the Great', cursive; */
-  color: #21216b
-}
-
-#header-container p {
-  text-align: right;
-  padding-right: 90px;
-  font-size: 30px;
-  /* position: relative; */
 }
 
 .suggestion-tagline {
