@@ -22,8 +22,6 @@ search.setAttribute("id", "search-container");
 appContainer.append(grpContainer);
 appContainer.append(gatheringContainer);
 
-search.addEventListener("keydown", function(e) {
-    let key = e.which || e.keyCode()
 //add event listener to fetch book groups when clicked in navbar
 document
   .getElementById("nav-select-club")
@@ -31,11 +29,15 @@ document
     once: true,
   });
 
-    if (key === 13) {Suggestion.fetchSuggestionOptions()}
-})
 //add event listeners to search to fetch matching books from Google Books API
 document
   .getElementById("search-button")
   .addEventListener("click", Suggestion.fetchSuggestionOptions, false);
 
+search.addEventListener("keydown", (e) => {
+  let key = e.which;
 
+  if (key === 13) {
+    Suggestion.fetchSuggestionOptions();
+  }
+});
