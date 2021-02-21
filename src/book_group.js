@@ -61,48 +61,43 @@ class BookGroup {
     }
   }
 
-    renderGroup() {
-       
-        let pgh = document.createElement('p')
-        pgh.id = `group-${this.id}` 
-        pgh.setAttribute("class", "group-name")
-        pgh.innerText = this.name
-        
-        grpContainer.append(pgh)
-        appContainer.append(grpContainer)
-        let groupId = this.id - 1
-    
-        pgh.addEventListener('click', ()=>{
-            let bg = BookGroup.allGroups.find(group => group.id === (groupId+1))
-            bg.showGroup()
-        })
+  renderGroup() {
+    let pgh = document.createElement("p");
+    pgh.id = `group-${this.id}`;
+    pgh.setAttribute("class", "group-name");
+    pgh.innerText = this.name;
+
+    grpContainer.append(pgh);
+    appContainer.append(grpContainer);
+    let groupId = this.id - 1;
+
+    pgh.addEventListener("click", () => {
+      let bg = BookGroup.allGroups.find((group) => group.id === groupId + 1);
+
+      bg.showGroup();
+    });
+  }
+
+  showGroup() {
+    search.style.display = "block";
+
+    grpContainer.innerHTML = `<h2 class="group-header-name">${this.name}</h2>`;
+    grpContainer.id = `${this.id} - group`;
+    grpContainer.append(sugContainer);
+
+    let groupSuggestedBookIds = [];
+    let groupSuggestedBooks = [];
+
+    for (let suggestion of this.suggestions) {
+      groupSuggestedBookIds.push(suggestion.book_id);
     }
 
-    showGroup() {
-        search.style.display = "block"
-        
-        grpContainer.innerHTML = `<h2 class="group-header-name">${this.name}</h2>`
-        grpContainer.id = `${this.id} - group`
-        grpContainer.append(sugContainer)
-        
-        let groupSuggestedBookIds = []
-        let groupSuggestedBooks = []
-
-        for (let suggestion of this.suggestions) {
-            groupSuggestedBookIds.push(suggestion.book_id)
+    for (let bookId of groupSuggestedBookIds) {
+      for (let book of Book.allBooks) {
+        if (bookId === book.id) {
+          groupSuggestedBooks.push(book);
         }
-        
-        for (let bookId of groupSuggestedBookIds) {
-            for (let book of Book.allBooks) {
-                if (bookId === book.id) {
-                    groupSuggestedBooks.push(book)
-                }
-            }
-        }
-        
-        for (let book of groupSuggestedBooks) {
-            Suggestion.renderSuggestion(book)
-        }
+      }
     }
 
     resetGroupSuggestions() {
