@@ -37,7 +37,7 @@ class BookGroup {
   static renderGroups() {
     search.style.display = "none";
     document
-      .getElementById("select-club")
+      .getElementById("nav-select-club")
       .addEventListener("click", () => BookGroup.renderGroups());
 
     grpSugs.innerHTML = "";
