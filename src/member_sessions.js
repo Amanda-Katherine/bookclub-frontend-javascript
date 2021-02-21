@@ -269,3 +269,18 @@ async function submitRegistration() {
   }
 }
 
+async function submitLogout() {
+  let loggedInMemberId = parseInt(localStorage.getItem("memberId"));
+  let memberIdObject = { memberId: loggedInMemberId };
+
+  let options = {
+    method: "DELETE",
+    // credential: "same-origin",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(memberIdObject),
+  };
+
+  let response = await fetch(`${BACKEND_URL}/logout`, options);
+  let logoutResponse = await response.json();
+
+}
