@@ -193,14 +193,38 @@ html {
   }
 }
 
+/*navbar media screen width*/
+@media screen and (min-width: 915px) {
+  .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    padding: 0;
+    justify-content: initial;
+    flex-direction: row;
+    transform: initial;
+    transition: initial;
+  }
+  .nav-link {
+    margin-left: 4rem;
+    font-size: 1.6rem;
+    transition: all 0.1s;
+    color: rgb(254, 227, 156, 0.9);
+  }
+  #nav-select-club,
+  #nav-logout {
+    color: rgba(254, 227, 156, 0.9);
   }
 
-  @media (min-width: 900px) {
-    .sug-cards { grid-template-columns: repeat(3, 1fr); }
-    
-    #select-club {
-      color: rgba(254, 227, 156, 0.9);
-
-      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-    }
+  .menu-toggle {
+    display: none;
   }
+}
+
+@media (min-width: 0px) {
+  #select-club,
+  #logout {
+    color: rgba(254, 227, 156, 0.9);
+  }
+}
