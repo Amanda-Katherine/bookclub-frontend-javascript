@@ -43,4 +43,6 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 Thanks to all the book lovers out there.
 
-Special thanks to [CSS Script](https://www.cssscript.com/mobile-site-navbar/) and [Mohssine aboutaj](https://codepen.io/MohssineAboutajWeb/pen/wpBQEo), which my navbar and login form were inspired by. Background photo credit to [The Jakarta Post](https://www.thejakartapost.com/life/2019/06/01/5-ways-to-read-free-books-online.html).
+Special thanks to [CSS Script](https://www.cssscript.com/mobile-site-navbar/) and [Mohssine aboutaj](https://codepen.io/MohssineAboutajWeb/pen/wpBQEo), which my navbar and login form were inspired by.
+
+Background photo credit to [The Jakarta Post](https://www.thejakartapost.com/life/2019/06/01/5-ways-to-read-free-books-online.html).
