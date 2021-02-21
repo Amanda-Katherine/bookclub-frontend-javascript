@@ -132,9 +132,9 @@ html {
 }
 /*navbar menu animations end*/
 /*NAVBAR CSS END*/
+
+#nav-select-club {
   color: rgba(80, 0, 0, 0.9);
-  
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .sug-card {
@@ -144,9 +144,14 @@ html {
   padding-bottom: 2px;
   padding-right: 10px;
   /* border-style: groove; */
-    /* padding: 1rem;  */
-    /* height: 4rem; */
+  /* padding: 1rem;  */
+  /* height: 4rem; */
 }
+
+/* .suggested-books{
+    padding: 1rem; 
+    font: black;
+  } */
 
 /* .suggestions-container {
     max-width: 1200px;
@@ -155,26 +160,39 @@ html {
     grid-gap: 5rem;
   } */
 
-  /* .suggested-books{
-    padding: 1rem; 
-    font: black;
+.suggestion-tagline {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  .suggestions-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* #nav-select-club,
+  #nav-logout {
+    color: rgba(80, 0, 0, 0.9);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   } */
+}
 
-  .group-name {
-    font-size: 25px;
+@media (min-width: 900px) {
+  .sug-cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .group-header-name {
-    font-size: 35px;
+  #nav-select-club,
+  #nav-logout {
+    color: rgba(254, 227, 156, 0.9);
   }
+}
 
-  @media (min-width: 600px) {
-    .suggestions-container { grid-template-columns: repeat(2, 1fr); }
-    
-    #select-club {
-      color: rgba(80, 0, 0, 0.9);
-      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-    }
   }
 
   @media (min-width: 900px) {
