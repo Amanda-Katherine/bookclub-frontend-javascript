@@ -35,6 +35,8 @@ class BookGroup {
   }
 
   static renderGroups() {
+    document.getElementById("app-container").style.display = "block";
+
     search.style.display = "none";
     document
       .getElementById("nav-select-club")
