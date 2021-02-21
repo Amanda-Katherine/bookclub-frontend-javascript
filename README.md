@@ -37,7 +37,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 All contributions are welcome whether they be bug reports, pull requests, or fun new ideas at either the [frontend](https://github.com/Amanda-Katherine/bookclub-frontend-javascript) or [backend](https://github.com/Amanda-Katherine/bookclub-backend-rails-api) repos.
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
 ## Acknowledgments
 
