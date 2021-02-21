@@ -260,5 +260,12 @@ async function submitRegistration() {
     navLogout.style.display = "block";
     navBookClubs.style.display = "block";
 
+    //clear registration form fields
+    document.getElementById("register-first-name").value = "";
+    document.getElementById("register-last-name").value = "";
+    document.getElementById("register-email").value = "";
+    document.getElementById("register-password").value = "";
+    document.getElementById("register-password-confirmation").value = "";
+  }
 }
 
