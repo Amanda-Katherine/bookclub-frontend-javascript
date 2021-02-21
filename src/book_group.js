@@ -100,34 +100,39 @@ class BookGroup {
       }
     }
 
-    resetGroupSuggestions() {
-        let sugIds = this.suggestions.map(sug => sug.id)
-
-        for (let sug of sugIds) {
-            return fetch(`http://localhost:3000/suggestions/${sug}`, {
-                method: "DELETE"
-            })
-            .then(response => {
-                if (response.ok) {
-                    return
-                } else {
-                    throw new Error(`Hmmm, looks like there was a ${response.status} error.  Your bookclub's suggestions were not able to be deleted.`)
-                }
-            })
-            .then(resp => {
-                console.log(this)
-            })
-            .catch(error => alert(error))
-        }    
+    for (let book of groupSuggestedBooks) {
+      Suggestion.renderSuggestion(book);
     }
-    
-    deleteGroupSuggestions() {
-        debugger
-        console.log(suggestions)
-        // const updatedBookGroup = this.map(({suggestions, ...}))
-        // for delete post - create forloop to delete all at once (restfully)
-        // once deleted (and confirmed), set this.suggestions = []
-    }
+  }
 
+  resetGroupSuggestions() {
+    let sugIds = this.suggestions.map((sug) => sug.id);
+
+    for (let sug of sugIds) {
+      return fetch(`http://localhost:3000/suggestions/${sug}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (response.ok) {
+            return;
+          } else {
+            throw new Error(
+              `Hmmm, looks like there was a ${response.status} error.  Your bookclub's suggestions were not able to be deleted.`
+            );
+          }
+        })
+        .then((resp) => {
+          console.log(this);
+        })
+        .catch((error) => alert(error));
+    }
+  }
+
+  deleteGroupSuggestions() {
+    debugger;
+    console.log(suggestions);
+    // const updatedBookGroup = this.map(({suggestions, ...}))
+    // for delete post - create forloop to delete all at once (restfully)
+    // once deleted (and confirmed), set this.suggestions = []
+  }
 }
-
