@@ -13,18 +13,18 @@ html {
   font-family: "Lato", sans-serif;
 }
 
+.group-name {
+  font-size: 35px;
+  /* font-family: "Shadows Into Light", cursive; */
+  font: bold;
+}
+
+.group-header-name {
+  font-size: 35px;
 }
 
 }
 
-.suggestion-tagline {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
 }
 
 #select-club {
