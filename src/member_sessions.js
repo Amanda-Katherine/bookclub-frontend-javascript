@@ -283,4 +283,9 @@ async function submitLogout() {
   let response = await fetch(`${BACKEND_URL}/logout`, options);
   let logoutResponse = await response.json();
 
+  if (logoutResponse.logged_in === false) {
+    localStorage.clear();
+    localStorage.setItem("loggedIn", false);
+
+  }
 }
