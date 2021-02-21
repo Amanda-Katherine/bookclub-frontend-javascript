@@ -46,3 +46,10 @@ search.addEventListener("keydown", (e) => {
 let logoutEventListener = document.querySelector("#nav-logout");
 logoutEventListener.addEventListener("click", submitLogout);
 
+//toggle navbar/hamburger depending on media screen size
+const navbar = document.querySelector(".navbar");
+const menuToggle = document.querySelector(".menu-toggle");
+menuToggle.addEventListener("click", () => {
+  navbar.classList.toggle("open");
+});
+
