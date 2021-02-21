@@ -19,13 +19,23 @@ sugContainer.setAttribute("class", "suggestions-container");
 sugContainer.setAttribute("id", "suggestions-group-container");
 search.setAttribute("id", "search-container");
 
-document.getElementById('search-button').addEventListener('click', Suggestion.fetchSuggestionOptions, false)
-document.getElementById('select-club').addEventListener('click', BookGroup.fetchClubNamesandBooks.bind(BookGroup), {once: true})
+appContainer.append(grpContainer);
+appContainer.append(gatheringContainer);
 
 search.addEventListener("keydown", function(e) {
     let key = e.which || e.keyCode()
+//add event listener to fetch book groups when clicked in navbar
+document
+  .getElementById("nav-select-club")
+  .addEventListener("click", BookGroup.fetchClubNamesandBooks.bind(BookGroup), {
+    once: true,
+  });
 
     if (key === 13) {Suggestion.fetchSuggestionOptions()}
 })
+//add event listeners to search to fetch matching books from Google Books API
+document
+  .getElementById("search-button")
+  .addEventListener("click", Suggestion.fetchSuggestionOptions, false);
 
 
