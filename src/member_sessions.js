@@ -137,6 +137,29 @@ function loadRegistrationLogin() {
   loginButton.addEventListener("click", submitLogin);
   registerButton.addEventListener("click", submitRegistration);
 
+  let loginPassword = document.getElementById("login-password");
+
+  loginPassword.addEventListener("keydown", (e) => {
+    let key = e.which;
+
+    if (key === 13) {
+      submitLogin();
+    }
+  });
+
+  let registerPasswordConfirmation = document.getElementById(
+    "register-password-confirmation"
+  );
+
+  registerPasswordConfirmation.addEventListener("keydown", (e) => {
+    let key = e.which;
+
+    if (key === 13) {
+      submitRegistration();
+    }
+  });
+}
+
 async function submitLogin() {
   let email = document.getElementById("login-email").value;
   let password = document.getElementById("login-password").value;
