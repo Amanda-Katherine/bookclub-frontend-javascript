@@ -1,15 +1,16 @@
 /* html { font-size: 22px; } */
-body, html { 
-  padding: 1rem; 
+body,
+html {
+  padding: 1rem;
   position: relative;
   height: 100%;
-  background-image: url('images/book-background.jpg');
+  background-image: url("images/book-background.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-origin: content-box;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 #header-container div,
