@@ -6,6 +6,8 @@ _On The Same Page_ is an application where book clubs can come together to find 
 
 This is an SPA made with Google Books API, vanilla JavaScript, and the Rails API.
 
+[Live page](https://priceless-swanson-0ba84f.netlify.app/) hosted on Netlify.
+
 You can find the backend [repo](https://github.com/Amanda-Katherine/bookclub-backend-rails-api) here.
 
 ## Installation
