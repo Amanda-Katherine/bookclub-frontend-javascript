@@ -1,4 +1,5 @@
-const BACKEND_URL = "http://localhost:3000";
+// const LOCALHOST_URL = "http://localhost:3000";
+const HEROKU_URL = "https://ancient-inlet-33668.herokuapp.com/";
 
 let appContainer = document.querySelector("main");
 let gatheringContainer = document.createElement("div");
