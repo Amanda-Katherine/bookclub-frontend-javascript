@@ -181,7 +181,12 @@ async function submitLogin() {
     body: JSON.stringify(memberLogin),
   };
 
-  let response = await fetch(`${BACKEND_URL}/login`, options);
+  //used during development
+  // let response = await fetch(`${LOCALHOST_URL}/login`, options);
+
+  //used post-deployment
+  let response = await fetch(`${HEROKU_URL}/login`, options);
+
   let memberData = await response.json();
 
   if (memberData.errors) {
@@ -240,7 +245,12 @@ async function submitRegistration() {
     body: JSON.stringify(memberRegistration),
   };
 
-  let response = await fetch(`${BACKEND_URL}/members`, options);
+  //used during development
+  // let response = await fetch(`${LOCALHOST_URL}/members`, options);
+
+  //used post-deployment
+  let response = await fetch(`${HEROKU_URL}/members`, options);
+
   let memberData = await response.json();
 
   if (memberData.errors) {
@@ -280,7 +290,12 @@ async function submitLogout() {
     body: JSON.stringify(memberIdObject),
   };
 
-  let response = await fetch(`${BACKEND_URL}/logout`, options);
+  //used for development
+  // let response = await fetch(`${LOCALHOST_URL}/logout`, options);
+
+  //used post-deployment
+  let response = await fetch(`${HEROKU_URL}/logout`, options);
+
   let logoutResponse = await response.json();
 
   if (logoutResponse.logged_in === false) {
