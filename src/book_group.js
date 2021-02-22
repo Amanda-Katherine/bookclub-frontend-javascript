@@ -17,9 +17,16 @@ class BookGroup {
   }
 
   static async fetchClubNamesandBooks() {
+    //used for development phase
+    // let [groupsResponse, booksResponse] = await Promise.all([
+    //   fetch(`${LOCALHOST_URL}/book_groups`),
+    //   fetch(`${LOCALHOST_URL}/books`),
+    // ]);
+
+    //used for post-deployment
     let [groupsResponse, booksResponse] = await Promise.all([
-      fetch("http://localhost:3000/book_groups"),
-      fetch("http://localhost:3000/books"),
+      fetch(`${HEROKU_URL}/book_groups`),
+      fetch(`${HEROKU_URL}/books`),
     ]);
 
     let groups = await groupsResponse.json();
@@ -109,7 +116,13 @@ class BookGroup {
     let sugIds = this.suggestions.map((sug) => sug.id);
 
     for (let sug of sugIds) {
-      return fetch(`http://localhost:3000/suggestions/${sug}`, {
+      //used for development phase
+      // return fetch(`${LOCALHOST_URL}/suggestions/${sug}`, {
+      //   method: "DELETE",
+      // })
+
+      //used for post-deployment
+      return fetch(`${HEROKU_URL}/suggestions/${sug}`, {
         method: "DELETE",
       })
         .then((response) => {

@@ -39,7 +39,12 @@ class Suggestion {
       },
       body: JSON.stringify(suggestion),
     };
-    fetch("http://localhost:3000/suggestions", options)
+
+    //used for development phase
+    // fetch(`${LOCALHOST_URL}/suggestions`, options);
+
+    //used for post-deployment
+    fetch(`${HEROKU_URL}/suggestions`, options)
       .then((resp) => resp.json())
       .then((suggestion) => new Suggestion(suggestion))
       .then((sug) => {
@@ -200,7 +205,11 @@ class Suggestion {
   postFetchAddVote() {
     let newVoteCount = this.vote + 1;
 
-    fetch(`http://localhost:3000/suggestions/${this.id}`, {
+    //used for development phase
+    // fetch(`${LOCALHOST_URL}/suggestions/${this.id}`, {
+
+    // used for post-deployment
+    fetch(`${HEROKU_URL}/suggestions/${this.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
