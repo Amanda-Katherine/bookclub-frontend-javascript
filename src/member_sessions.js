@@ -206,7 +206,7 @@ async function submitLogin() {
     window.alert(memberData.errors);
   } else {
     //set localStorage for logged in member
-    localStorage.setItem("memberId", JSON.stringify(memberData.member.id));
+    localStorage.setItem("memberId", JSON.stringify(memberData.member_id));
     localStorage.setItem("loggedIn", true);
 
     //make logout and find book club options appear in navbar
