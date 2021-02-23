@@ -200,7 +200,7 @@ async function submitLogin() {
   let response = await fetch(`${HEROKU_URL}/login`, options);
 
   let memberData = await response.json();
-  debugger;
+
   if (memberData.errors) {
     //future edits: build out further to include modal or flash message with message.errors
     window.alert(memberData.errors);
