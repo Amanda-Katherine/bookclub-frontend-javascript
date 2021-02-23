@@ -86,7 +86,10 @@ function loadRegistrationLogin() {
     "' /><br/>" +
     "<input type='button' id='login-button' value='Login' style='" +
     btnStyles +
-    "' />"; //+
+    "' />" +
+    "<input type='button' id='guest-login-button' value='Click here for Guest Login' style='" +
+    btnStyles +
+    "' />";
   // "<p><a style='" +
   // forgetStyles +
   // "' href='#'>forget password ?</a></p><br/>";
@@ -134,8 +137,10 @@ function loadRegistrationLogin() {
   //event listeners to submit forms
   let loginButton = document.getElementById("login-button");
   let registerButton = document.getElementById("register-button");
+  let guestLoginButton = document.getElementById("guest-login-button");
   loginButton.addEventListener("click", submitLogin);
   registerButton.addEventListener("click", submitRegistration);
+  guestLoginButton.addEventListener("click", fillGuestLoginForm);
 
   let loginPassword = document.getElementById("login-password");
 
@@ -160,6 +165,13 @@ function loadRegistrationLogin() {
   });
 }
 
+function fillGuestLoginForm() {
+  //set email and password to guest credentials
+  document.getElementById("login-email").value = "guest_login@guest.com";
+  document.getElementById("login-password").value = "guestpass";
+
+  submitLogin();
+}
 async function submitLogin() {
   let email = document.getElementById("login-email").value;
   let password = document.getElementById("login-password").value;
@@ -188,7 +200,7 @@ async function submitLogin() {
   let response = await fetch(`${HEROKU_URL}/login`, options);
 
   let memberData = await response.json();
-
+  debugger;
   if (memberData.errors) {
     //future edits: build out further to include modal or flash message with message.errors
     window.alert(memberData.errors);
