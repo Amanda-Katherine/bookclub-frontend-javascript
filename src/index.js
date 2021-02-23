@@ -22,6 +22,7 @@ search.setAttribute("id", "search-container");
 
 appContainer.append(grpContainer);
 appContainer.append(gatheringContainer);
+appContainer.style.color = "black";
 
 //add event listener to fetch book groups when clicked in navbar
 document
