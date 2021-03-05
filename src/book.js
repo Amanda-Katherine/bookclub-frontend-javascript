@@ -54,6 +54,7 @@ class Book {
       .then((book) => Suggestion.createSuggestion(book.id));
   }
 
+  // function checking to see if book already exists in database
   static async checkBookDatabase(title, author) {
     let bookFinder = Book.allBooks.find((bk) => {
       return bk.title === title && bk.author === author;
