@@ -30,6 +30,31 @@ class Book {
       description = "No preview given";
     }
 
+    let image = bookInfo.imageLinks.thumbnail;
+
+    let book = { book: { title, author, description, image } };
+
+    let options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(book),
+    };
+    document.getElementById("search").value = "";
+
+    //used for development phase
+    // fetch(`${LOCALHOST_URL}/books`, options);
+
+    //used for post=deployment
+    fetch(`${HEROKU_URL}/books`, options)
+      .then((resp) => resp.json())
+      .then((book) => new Book(book))
+      .then((book) => Suggestion.createSuggestion(book.id));
+  }
+
+  static async checkBookDatabase(title, author) {
     let bookFinder = Book.allBooks.find((bk) => {
       return bk.title === title && bk.author === author;
     });
@@ -75,34 +100,5 @@ class Book {
         return;
       }
     }
-
-    if (!!bookInfo.description) {
-      description = bookInfo.description;
-    } else {
-      description = "No preview given";
-    }
-
-    let image = bookInfo.imageLinks.thumbnail;
-
-    let book = { book: { title, author, description, image } };
-
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(book),
-    };
-    document.getElementById("search").value = "";
-
-    //used for development phase
-    // fetch(`${LOCALHOST_URL}/books`, options);
-
-    //used for post=deployment
-    fetch(`${HEROKU_URL}/books`, options)
-      .then((resp) => resp.json())
-      .then((book) => new Book(book))
-      .then((book) => Suggestion.createSuggestion(book.id));
   }
 }
