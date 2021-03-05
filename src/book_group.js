@@ -134,16 +134,14 @@ class BookGroup {
             );
           }
         })
-        .then((resp) => {
-          console.log(this);
-        })
         .catch((error) => alert(error));
     }
   }
 
+  //build out future delete functionality
   deleteGroupSuggestions() {
-    debugger;
-    console.log(suggestions);
+    // debugger;
+    // console.log(suggestions);
     // const updatedBookGroup = this.map(({suggestions, ...}))
     // for delete post - create forloop to delete all at once (restfully)
     // once deleted (and confirmed), set this.suggestions = []
