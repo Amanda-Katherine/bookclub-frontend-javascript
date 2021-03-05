@@ -11,7 +11,7 @@ class Book {
     Book.allBooks.push(this);
   }
 
-  static createBook(bookInfo) {
+  static async createBook(bookInfo) {
     search.firstElementChild.value = "";
     possibleSugs.innerHTML = "";
     let title = bookInfo.title;
