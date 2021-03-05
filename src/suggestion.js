@@ -20,7 +20,6 @@ class Suggestion {
     );
 
     if (!!sugFinder) {
-      console.log("suggestion already exists");
       let bg = BookGroup.allGroups.find((group) => (group.id = book_group_id));
 
       grpSugs.style.display = "block";
