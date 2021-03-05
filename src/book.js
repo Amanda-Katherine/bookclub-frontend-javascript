@@ -60,8 +60,6 @@ class Book {
     });
 
     if (!!bookFinder) {
-      console.log("this book already exists in the database");
-
       let bkGrpId = parseInt(grpContainer.id);
       let bkGrp = BookGroup.allGroups.find((group) => group.id === bkGrpId);
       let bkGrpSugBookIds = bkGrp.suggestions.map(
