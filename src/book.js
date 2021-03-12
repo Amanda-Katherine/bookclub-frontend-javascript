@@ -24,7 +24,7 @@ class Book {
     //determine if book is already in database
     this.checkBookDatabase(title, author);
 
-    //set book's description
+    //set book's description with ternary operator
     bookInfo.description
       ? (description = bookInfo.description)
       : (description = "No preview given");
