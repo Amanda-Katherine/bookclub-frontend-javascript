@@ -3,3 +3,7 @@ https://ancient-inlet-33668.herokuapp.com/
 
 #netlify url for frontend:
 https://priceless-swanson-0ba84f.netlify.app/
+
+Edits:
+suggestion.js 
+in renderSuggestion, make sure there is a catch in case there is no 'data' variable to iterate over if nothing appears from the search
