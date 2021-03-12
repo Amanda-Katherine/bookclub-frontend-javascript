@@ -24,11 +24,10 @@ class Book {
     //determine if book is already in database
     this.checkBookDatabase(title, author);
 
-    if (!!bookInfo.description) {
-      description = bookInfo.description;
-    } else {
-      description = "No preview given";
-    }
+    //set book's description
+    bookInfo.description
+      ? (description = bookInfo.description)
+      : (description = "No preview given");
 
     let image = bookInfo.imageLinks.thumbnail;
 
